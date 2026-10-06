@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TeleAmb · Laboratorio de Teledetección y Monitoreo Ambiental · UPLA</title>
+  <meta name="description" content="Laboratorio de Teledetección y Monitoreo Ambiental de la Universidad de Playa Ancha. Drones e imágenes satelitales para el análisis de coberturas, nieve, cuencas y territorio.">
+  <meta name="theme-color" content="#04090f">
+  <meta property="og:title" content="TeleAmb · Teledetección y Monitoreo Ambiental">
+  <meta property="og:description" content="Drones e imágenes satelitales para comprender y gestionar el territorio.">
+  <meta property="og:image" content="assets/img/fondo/satelital.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6QRCWL86H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C6QRCWL86H');
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Principal">
+      <a class="brand" href="index.html" aria-label="TeleAmb, inicio">
+        <img src="assets/img/teleamb-icon.png" alt="" width="40" height="40">
+        <span class="brand__text">
+          <span class="brand__name">Tele<b>Amb</b></span>
+          <span class="brand__sub">UPLA · Teledetección</span>
+        </span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="index.html#capacidades">Capacidades</a></li>
+        <li><a href="plataformas.html">Plataformas</a></li>
+        <li><a href="team.html">Equipo</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="nav__cta">
+        <span class="nav__clock">VALPARAÍSO <span data-clock>--:--:--</span></span>
+        <a class="btn btn--ghost" href="contact.html">Colabora</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-label="Presentación">
+      <canvas class="hero__canvas" data-terrain aria-hidden="true"></canvas>
+
+      <div class="hud hud--tr" aria-hidden="true">
+        <div><span class="hud__dot"></span><b>Adquisición activa</b></div>
+        <div>33°02′S · 71°38′O</div>
+        <div>Puntos <b data-hud-pts>0</b></div>
+        <div>Elev. máx <b data-hud-elev>0 m</b></div>
+        <div>Escaneo <b data-hud-scan>000.0%</b></div>
+        <div class="hud__legend"><span>0 m</span><span class="hud__ramp"></span><span>Cumbre</span></div>
+      </div>
+      <div class="hud hud--ml" aria-hidden="true">Nube de puntos · Relieve andino simulado</div>
+
+      <div class="container hero__content">
+        <p class="eyebrow fade-in">Laboratorio de Teledetección y Monitoreo Ambiental</p>
+        <h1 class="display hero__title">
+          <span class="line"><span>Observamos</span></span>
+          <span class="line"><span>el territorio</span></span>
+          <span class="line"><span class="text-gradient">desde arriba.</span></span>
+        </h1>
+        <div class="hero__bottom fade-in">
+          <p class="lead">Drones e imágenes satelitales para analizar coberturas, nieve, cuencas y ciudades, y convertir cada píxel en información útil para la gestión territorial y la adaptación al cambio climático.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#capacidades">Explorar capacidades
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#laboratorio">Laboratorio espectral</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== QUIÉNES SOMOS ===================== -->
+    <section class="section" id="nosotros">
+      <div class="grid-lines" aria-hidden="true"></div>
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">Quiénes somos</p>
+          <p class="manifesto" data-manifesto>Somos un laboratorio de la <em>Universidad de Playa Ancha</em> que integra sensores remotos y tecnologías geoespaciales para entender cómo cambia el territorio, y anticipar los riesgos del cambio climático.</p>
+        </div>
+        <div class="about-grid__side" data-reveal>
+          <p>TeleAmb es una unidad de la Facultad de Ciencias Naturales y Exactas. Nuestra misión es constituirnos como un laboratorio de referencia en gestión territorial, monitoreo ambiental y análisis de riesgos asociados al cambio climático.</p>
+          <p>Un equipo multidisciplinario de geógrafos, geólogos, arquitectos y agrónomos que desarrolla docencia, capacitación, investigación y servicios basados en información geográfica.</p>
+          <a class="link-arrow" href="team.html">Conoce al equipo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SENSORES ===================== -->
+    <div class="marquee" aria-label="Plataformas y herramientas que utilizamos">
+      <div class="marquee__track">
+        <span class="marquee__item">Sentinel-2 <small>MSI · 10 m</small></span>
+        <span class="marquee__item">Landsat 5 · 7 · 8 · 9 <small>30 m · desde 1984</small></span>
+        <span class="marquee__item">MODIS <small>Terra / Aqua · 500 m</small></span>
+        <span class="marquee__item">Sentinel-1 <small>Radar SAR</small></span>
+        <span class="marquee__item">Drones RTK <small>cm / píxel</small></span>
+        <span class="marquee__item">Cámaras multiespectrales <small>NIR · Red Edge</small></span>
+        <span class="marquee__item">Google Earth Engine <small>Nube</small></span>
+        <span class="marquee__item">Copernicus <small>Datos abiertos</small></span>
+        <span class="marquee__item">Estaciones de monitoreo <small>In situ</small></span>
+        <span class="marquee__item" aria-hidden="true">Sentinel-2 <small>MSI · 10 m</small></span>
+        <span class="marquee__item" aria-hidden="true">Landsat 5 · 7 · 8 · 9 <small>30 m · desde 1984</small></span>
+        <span class="marquee__item" aria-hidden="true">MODIS <small>Terra / Aqua · 500 m</small></span>
+        <span class="marquee__item" aria-hidden="true">Sentinel-1 <small>Radar SAR</small></span>
+        <span class="marquee__item" aria-hidden="true">Drones RTK <small>cm / píxel</small></span>
+        <span class="marquee__item" aria-hidden="true">Cámaras multiespectrales <small>NIR · Red Edge</small></span>
+        <span class="marquee__item" aria-hidden="true">Google Earth Engine <small>Nube</small></span>
+        <span class="marquee__item" aria-hidden="true">Copernicus <small>Datos abiertos</small></span>
+        <span class="marquee__item" aria-hidden="true">Estaciones de monitoreo <small>In situ</small></span>
+      </div>
+    </div>
+
+    <!-- ===================== DOS ESCALAS ===================== -->
+    <section class="section" id="capacidades">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Dos escalas, un territorio</p>
+            <h2 class="h2" data-reveal>Del continente<br>al centímetro.</h2>
+            <p class="lead" data-reveal>Combinamos la visión regional y la memoria histórica de los satélites con el detalle y la flexibilidad de los drones.</p>
+          </div>
+        </div>
+
+        <div class="scales">
+          <article class="scale-card" data-reveal>
+            <div class="scale-card__bg" style="background-image:url('assets/img/fondo/satelital.webp')"></div>
+            <div class="scale-card__top">
+              <span class="tag">01 · Órbita</span>
+              <span class="tag">705 km</span>
+            </div>
+            <div>
+              <h3>Imágenes satelitales</h3>
+              <p>Series de tiempo de décadas para detectar tendencias: pérdida de nieve, cambios de cobertura, expansión urbana o severidad de incendios, a escala de cuencas, regiones y cordilleras.</p>
+              <div class="chips">
+                <span class="chip">Series de tiempo</span>
+                <span class="chip">Índices espectrales</span>
+                <span class="chip">Detección de cambios</span>
+              </div>
+              <dl class="specs">
+                <div><dt>Resolución</dt><dd>10–500 m</dd></div>
+                <div><dt>Revisita</dt><dd>1–16 días</dd></div>
+                <div><dt>Archivo</dt><dd>+40 años</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="scale-card" data-reveal style="--d:.12s">
+            <div class="scale-card__bg" style="background-image:url('assets/img/fondo/drones.webp')"></div>
+            <div class="scale-card__top">
+              <span class="tag">02 · Vuelo</span>
+              <span class="tag">120 m</span>
+            </div>
+            <div>
+              <h3>Drones (UAV)</h3>
+              <p>Vuelos a demanda con cámaras RGB y multiespectrales para levantar ortomosaicos, modelos digitales de elevación y nubes de puntos, y validar en terreno lo que vemos desde el espacio.</p>
+              <div class="chips">
+                <span class="chip">Fotogrametría</span>
+                <span class="chip">Ortomosaicos</span>
+                <span class="chip">Modelos 3D</span>
+              </div>
+              <dl class="specs">
+                <div><dt>Resolución</dt><dd>1–5 cm</dd></div>
+                <div><dt>Revisita</dt><dd>A demanda</dd></div>
+                <div><dt>Salida</dt><dd>MDE · 3D</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LABORATORIO ESPECTRAL ===================== -->
+    <section class="section section--tight" id="laboratorio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Laboratorio espectral · interactivo</p>
+            <h2 class="h2" data-reveal>Cada píxel<br>cuenta una historia.</h2>
+            <p class="lead" data-reveal>Arrastra el control sobre la escena para comparar la imagen original con distintos procesamientos. Todo se calcula en tu navegador, igual que en nuestros flujos de análisis.</p>
+          </div>
+        </div>
+
+        <div class="spectral" data-spectral data-src="assets/img/fondo/satelital.webp">
+          <div class="spectral__panel" data-reveal>
+            <div class="spectral__modes" role="group" aria-label="Tipo de procesamiento">
+              <button class="mode-btn" type="button" data-mode="clasificacion" aria-pressed="true">
+                <div><strong>Clasificación</strong><span>Coberturas por umbrales</span></div><i></i>
+              </button>
+              <button class="mode-btn" type="button" data-mode="nieve" aria-pressed="false">
+                <div><strong>Nieve</strong><span>Índice de brillo espectral</span></div><i></i>
+              </button>
+              <button class="mode-btn" type="button" data-mode="vigor" aria-pressed="false">
+                <div><strong>Vegetación</strong><span>Diferencia normalizada</span></div><i></i>
+              </button>
+              <button class="mode-btn" type="button" data-mode="bordes" aria-pressed="false">
+                <div><strong>Bordes</strong><span>Filtro Sobel</span></div><i></i>
+              </button>
+            </div>
+            <div class="legend" data-legend aria-live="polite"></div>
+            <p class="spectral__note">Escena en falso color: la vegetación aparece en rojo por su alta reflectancia en el infrarrojo cercano. Demostración didáctica; nuestros productos usan bandas completas y validación en terreno.</p>
+          </div>
+
+          <div class="spectral__view" data-reveal data-cursor tabindex="0" role="slider" aria-label="Comparador: original y procesada" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <canvas data-layer="base" aria-hidden="true"></canvas>
+            <canvas data-layer="top" class="layer-top" aria-hidden="true"></canvas>
+            <div class="spectral__handle" aria-hidden="true"></div>
+            <div class="spectral__labels" aria-hidden="true">
+              <span class="tag">Original<span class="hide-sm"> · falso color</span></span>
+              <span class="tag" data-mode-label>Clasificación de coberturas</span>
+            </div>
+            <div class="spectral__crosshair" aria-hidden="true"><span class="tag" data-coords>PX 0000 · 0000</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LÍNEAS DE TRABAJO ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Líneas de investigación</p>
+            <h2 class="h2" data-reveal>Lo que medimos.</h2>
+          </div>
+          <a class="link-arrow" href="publicaciones.html">Ver publicaciones</a>
+        </div>
+
+        <div class="lines">
+          <article class="line-card" data-reveal tabindex="0">
+            <div class="line-card__bg" style="background-image:url('assets/img/fondo/nieve.webp')"></div>
+            <span class="line-card__num">01 / Criósfera</span>
+            <h3>Nieve y glaciares</h3>
+            <p>Persistencia de nieve, línea de nieves y balance de glaciares en los Andes a partir de MODIS y Landsat. Sede del Observatorio Satelital de Nieves.</p>
+            <div class="chips"><span class="chip">MODIS</span><span class="chip">Landsat</span><span class="chip">Tendencias</span></div>
+          </article>
+
+          <article class="line-card" data-reveal tabindex="0" style="--d:.08s">
+            <div class="line-card__bg" style="background-image:url('assets/img/fondo/cuenca.webp')"></div>
+            <span class="line-card__num">02 / Hidrología</span>
+            <h3>Cuencas y recursos hídricos</h3>
+            <p>Relación entre cobertura nival, caudales y disponibilidad de agua en cuencas de montaña de Chile central.</p>
+            <div class="chips"><span class="chip">Caudales</span><span class="chip">Cuencas andinas</span></div>
+          </article>
+
+          <article class="line-card" data-reveal tabindex="0">
+            <div class="line-card__bg" style="background-image:url('assets/img/fondo/silvestre.webp')"></div>
+            <span class="line-card__num">03 / Coberturas</span>
+            <h3>Uso y cobertura de suelo</h3>
+            <p>Clasificación de coberturas, bosque nativo y áreas silvestres con imágenes satelitales y vuelos de dron.</p>
+            <div class="chips"><span class="chip">Clasificación</span><span class="chip">Conservación</span></div>
+          </article>
+
+          <article class="line-card" data-reveal tabindex="0" style="--d:.08s">
+            <div class="line-card__bg" style="background-image:url('assets/img/noticias/fuente_worldview_nasa.webp')"></div>
+            <span class="line-card__num">04 / Riesgos</span>
+            <h3>Incendios y recuperación</h3>
+            <p>Severidad de incendios, erosión post-fuego y recuperación del bosque mediterráneo. Atlas de Incendios de la Región de Valparaíso.</p>
+            <div class="chips"><span class="chip">Severidad</span><span class="chip">dNBR</span></div>
+          </article>
+
+          <article class="line-card" data-reveal tabindex="0" style="--d:.16s">
+            <div class="line-card__bg" style="background-image:url('assets/img/fondo/ciudad.webp')"></div>
+            <span class="line-card__num">05 / Ciudades</span>
+            <h3>Monitoreo urbano</h3>
+            <p>Plataforma de monitoreo satelital de ciudades para la planificación urbana y la gestión ambiental de comunas chilenas.</p>
+            <div class="chips"><span class="chip">Planificación</span><span class="chip">Periurbano</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FLUJO ===================== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Cómo trabajamos</p>
+            <h2 class="h2" data-reveal>Del dato crudo<br>a la decisión.</h2>
+          </div>
+        </div>
+        <div class="workflow">
+          <div class="step" data-reveal>
+            <span class="step__num">01 · Adquisición</span>
+            <h3>Captura</h3>
+            <p>Planificación de vuelos, descarga de escenas y campañas de terreno con estaciones de monitoreo.</p>
+            <ul><li>Planes de vuelo RTK</li><li>Catálogos Copernicus / USGS</li><li>Puntos de control</li></ul>
+          </div>
+          <div class="step" data-reveal style="--d:.08s">
+            <span class="step__num">02 · Procesamiento</span>
+            <h3>Corrección</h3>
+            <p>Correcciones radiométricas y atmosféricas, enmascarado de nubes, fotogrametría y mosaicos.</p>
+            <ul><li>Reflectancia de superficie</li><li>Ortomosaicos y MDE</li><li>Nubes de puntos</li></ul>
+          </div>
+          <div class="step" data-reveal style="--d:.16s">
+            <span class="step__num">03 · Análisis</span>
+            <h3>Modelación</h3>
+            <p>Índices espectrales, clasificación supervisada, series de tiempo y análisis estadístico de tendencias.</p>
+            <ul><li>NDVI · NDSI · NBR</li><li>Machine learning</li><li>Mann–Kendall</li></ul>
+          </div>
+          <div class="step" data-reveal style="--d:.24s">
+            <span class="step__num">04 · Entrega</span>
+            <h3>Información</h3>
+            <p>Cartografía, plataformas web, boletines y capacitación para equipos técnicos y tomadores de decisión.</p>
+            <ul><li>Dashboards y visores</li><li>Boletines periódicos</li><li>Cursos GEE</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROYECTO DESTACADO ===================== -->
+    <section class="section feature" aria-labelledby="feature-title">
+      <div class="feature__bg" data-parallax style="background-image:url('assets/img/noticias/observatorio_nieves_2024.webp')"></div>
+      <div class="container feature__grid">
+        <div class="feature__body" data-reveal>
+          <p class="eyebrow">Proyecto destacado · FONDEF IDeA + IT</p>
+          <h2 class="h2" id="feature-title">Observatorio Satelital de Nieves</h2>
+          <p>El primer observatorio satelital de nieves de la Cordillera de los Andes, desarrollado con FONDEF IDeA (2020–2022) y FONDEF IT (2024–2025). Junto a la Dirección General de Aguas (DGA) monitoreamos a diario la cobertura nival que abastece de agua a Chile central.</p>
+          <p>Nuestro análisis de 26 años de MODIS muestra que los Andes centrales son un punto crítico: la nieve retrocede y la línea de nieve sube.</p>
+          <div class="hero__actions" style="margin-top:32px">
+            <a class="btn btn--primary" href="https://observatorionieves.cl/" target="_blank" rel="noopener">Ir al observatorio
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="https://doi.org/10.3389/feart.2026.1564035" target="_blank" rel="noopener">Leer el estudio</a>
+          </div>
+        </div>
+        <div class="feature__stats" data-reveal style="--d:.1s">
+          <div class="stat">
+            <div class="stat__value"><span data-count="80000">0</span><small>km²</small></div>
+            <div class="stat__label">de cobertura nival perdida entre 29° y 36°S (2000–2025)</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value"><span data-count="500">0</span><small>m</small></div>
+            <div class="stat__label">de ascenso acumulado de la línea de nieve</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value"><span data-count="81">0</span></div>
+            <div class="stat__label">estaciones de altura de nieve con control de calidad</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value"><span data-count="39">0</span><small>años</small></div>
+            <div class="stat__label">de Landsat para proyectar la nieve al 2050</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLATAFORMAS ===================== -->
+    <section class="section platforms-section" id="plataformas">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Plataformas abiertas</p>
+            <h2 class="h2" data-reveal>Ciencia que<br>se puede explorar.<span class="count" data-platforms-count>08</span></h2>
+            <p class="lead">Observatorios y visores web nacidos de nuestros proyectos. Datos satelitales, de dron y de estaciones, listos para consultar.</p>
+          </div>
+          <a class="link-arrow" href="plataformas.html">Todas las plataformas</a>
+        </div>
+        <div class="showcase" data-platforms="showcase" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ===================== NOTICIAS ===================== -->
+    <section class="section section--paper">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Noticias</p>
+            <h2 class="h2" data-reveal>Desde el laboratorio.</h2>
+          </div>
+          <a class="btn btn--dark" href="noticias.html">Todas las noticias
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="news-grid" data-news="3"></div>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICACIONES ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Producción científica</p>
+            <h2 class="h2" data-reveal><span data-pubs-count>16</span> publicaciones<br>indexadas.</h2>
+          </div>
+          <a class="link-arrow" href="publicaciones.html">Ver todas</a>
+        </div>
+        <div class="pub-list" data-pubs="5"></div>
+      </div>
+    </section>
+
+    <!-- ===================== EQUIPO ===================== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Dirección</p>
+            <h2 class="h2" data-reveal>Las personas<br>detrás de los datos.</h2>
+          </div>
+          <a class="link-arrow" href="team.html">Equipo completo</a>
+        </div>
+        <div class="team-grid team-grid--3" data-team="direccion"></div>
+      </div>
+    </section>
+
+    <!-- ===================== INSTITUCIONES ===================== -->
+    <section class="section section--tight">
+      <div class="container">
+        <p class="eyebrow">Instituciones</p>
+        <div class="partners" data-reveal>
+          <a class="partner" href="https://www.upla.cl" target="_blank" rel="noopener">
+            <span class="partner__logo"><img src="assets/img/Upla_Inst.png" alt="Universidad de Playa Ancha" loading="lazy"></span>
+            <span>Universidad de Playa Ancha</span>
+          </a>
+          <a class="partner" href="index.html">
+            <span class="partner__logo"><img src="assets/img/TeleAmb-vec.png" alt="TeleAmb" loading="lazy"></span>
+            <span>TeleAmb · FCNE</span>
+          </a>
+          <a class="partner" href="https://hubambientalupla.cl" target="_blank" rel="noopener">
+            <span class="partner__logo"><img src="assets/img/hub-logo.webp" alt="HUB Ambiental UPLA" loading="lazy"></span>
+            <span>HUB Ambiental UPLA</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta" data-reveal>
+          <div class="cta__pixels" data-pixels aria-hidden="true"></div>
+          <p class="eyebrow" style="color:var(--sand)">Trabajemos juntos</p>
+          <h2 class="h2">¿Tienes un territorio que analizar?</h2>
+          <p>Colaboramos con municipios, servicios públicos, empresas y otras universidades en proyectos de monitoreo, cartografía, vuelos con drones y capacitación en teledetección.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="contact.html">Conversemos
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="mailto:teleamb@upla.cl">teleamb@upla.cl</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <img src="assets/img/teleamb-icon.png" alt="" width="40" height="40">
+            <span class="brand__text"><span class="brand__name">Tele<b>Amb</b></span><span class="brand__sub">UPLA · Teledetección</span></span>
+          </a>
+          <p>Laboratorio de Teledetección y Monitoreo Ambiental. Facultad de Ciencias Naturales y Exactas, Universidad de Playa Ancha.</p>
+        </div>
+        <div>
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="plataformas.html">Plataformas</a></li>
+            <li><a href="team.html">Equipo</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="https://www.upla.cl" target="_blank" rel="noopener">UPLA</a></li>
+            <li><a href="https://hubambientalupla.cl" target="_blank" rel="noopener">HUB Ambiental</a></li>
+            <li><a href="https://dataspace.copernicus.eu" target="_blank" rel="noopener">Copernicus</a></li>
+            <li><a href="https://earthengine.google.com" target="_blank" rel="noopener">Earth Engine</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <address>
+            Subida Leopoldo Carvallo 270<br>
+            Playa Ancha, Valparaíso, Chile<br><br>
+            <a href="mailto:teleamb@upla.cl">teleamb@upla.cl</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true">TeleAmb</div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> TeleAmb · Universidad de Playa Ancha</span>
+        <span>33°02′S 71°38′O</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/terrain.js" defer></script>
+  <script src="assets/js/spectral.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+</body>
+</html>

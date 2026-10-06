@@ -1,0 +1,82 @@
+[
+  {
+    "id": "nieves",
+    "titulo": "Observatorio Satelital de Nieves",
+    "proyecto": "FONDEF IDeA ID20i10058 · IT24I0092",
+    "categoria": "Nieve y agua",
+    "url": "https://observatorionieves.cl/",
+    "imagen": "assets/img/plataformas/nieves.webp",
+    "descripcion": "Cobertura de nieve diaria para todo Chile continental a partir de MODIS Terra y Aqua, con estadísticas por cuenca y boletines periódicos junto a la DGA.",
+    "chips": ["MODIS", "Cobertura nival", "Cuencas"]
+  },
+  {
+    "id": "hidromet",
+    "titulo": "Observatorio de Altura de Nieve",
+    "proyecto": "FONDEF IT24I0092",
+    "categoria": "Nieve y agua",
+    "url": "https://javiermedinamen-art.github.io/hidromet",
+    "imagen": "assets/img/plataformas/hidromet.webp",
+    "descripcion": "Explorador de estaciones y comparación entre cuencas de la altura de nieve mensual y anual en los Andes del Sur, construido sobre registros diarios con control de calidad.",
+    "chips": ["Estaciones", "Altura de nieve", "Chile · Argentina"]
+  },
+  {
+    "id": "nieves-hr",
+    "titulo": "Persistencia de nieve en alta resolución",
+    "proyecto": "FONDEF IT24I0092 · Hito 1",
+    "categoria": "Nieve y agua",
+    "url": "https://ee-observatorionieves.projects.earthengine.app/view/visualizador-de-nieve-de-alta-resolucion---hito-1-fondef-it",
+    "imagen": "assets/img/plataformas/nieves_hr.webp",
+    "descripcion": "Persistencia mensual de nieve en 2024 con Landsat 8/9 y Sentinel-2 para seis cuencas: Elqui, Aconcagua, Maipo, Itata, Toltén y Baker. Comparador entre misiones y gráfico de persistencia mensual.",
+    "chips": ["Landsat 8/9", "Sentinel-2", "6 cuencas"]
+  },
+  {
+    "id": "genius",
+    "titulo": "Plataforma GENIUS",
+    "proyecto": "FONDEF IDeA",
+    "categoria": "Ciudades",
+    "url": "https://plataformagenius.cl/",
+    "imagen": "assets/img/plataformas/genius.webp",
+    "descripcion": "Indicadores satelitales urbanos para Quilpué y la Región de Valparaíso: áreas verdes, contaminación del aire, huella urbana, luminosidad y temperatura superficial. Con U. de Chile, Municipalidad de Quilpué, GORE Valparaíso y CSU.",
+    "chips": ["Áreas verdes", "Temperatura superficial", "Huella urbana"]
+  },
+  {
+    "id": "incendio",
+    "titulo": "Incendio Viña del Mar 2024",
+    "proyecto": "Google Earth Engine",
+    "categoria": "Incendios",
+    "url": "https://ee-javiermedinamen.projects.earthengine.app/view/visualizador---incendio-2024",
+    "imagen": "assets/img/plataformas/incendio.webp",
+    "descripcion": "Áreas quemadas y severidad del gran incendio de febrero de 2024 en Viña del Mar y sus alrededores, con un comparador de imágenes antes y después.",
+    "chips": ["Severidad", "Áreas quemadas", "Antes / después"]
+  },
+  {
+    "id": "jbn",
+    "titulo": "Vegetación del Jardín Botánico Nacional",
+    "proyecto": "Google Earth Engine",
+    "categoria": "Vegetación",
+    "url": "https://ee-teleamb.projects.earthengine.app/view/visualizador-de-vegetacin---jbn",
+    "imagen": "assets/img/plataformas/jbn.webp",
+    "descripcion": "Series de índices de vegetación normalizados para seguir el estado y la evolución de la cobertura vegetal del Jardín Botánico Nacional de Viña del Mar.",
+    "chips": ["Índices normalizados", "Series de tiempo"]
+  },
+  {
+    "id": "pumahuida",
+    "titulo": "Monitoreo vegetacional en Pumahuida",
+    "proyecto": "Fondecyt · con PUC",
+    "categoria": "Vegetación",
+    "url": "https://teleamb-upla.github.io/fondecyt_puc/",
+    "imagen": "assets/img/plataformas/pumahuida.webp",
+    "descripcion": "Imágenes de alta resolución y series temporales de índices de vegetación para el seguimiento de Pumahuida, en colaboración con la Pontificia Universidad Católica de Chile.",
+    "chips": ["Alta resolución", "Series temporales"]
+  },
+  {
+    "id": "salar",
+    "titulo": "Vuelos de dron en el Salar del Huasco",
+    "proyecto": "Anillo MESS · con U. de Antofagasta",
+    "categoria": "Drones",
+    "url": "https://teleamb-upla.github.io/salares_web/",
+    "imagen": "assets/img/plataformas/salar.webp",
+    "descripcion": "Ortomosaicos de dron con capas RGB, NDVI, NDCI, NDWI y temperatura superficial (LST) para el monitoreo de humedales altoandinos del Salar del Huasco.",
+    "chips": ["Dron", "NDVI · NDWI", "LST"]
+  }
+]

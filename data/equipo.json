@@ -1,0 +1,88 @@
+{
+  "actual": [
+    {
+      "nombre": "Freddy Saavedra",
+      "rol": "Directivo",
+      "grupo": "direccion",
+      "bio": "Ingeniero Agrónomo, PhD. en Ciencias de la Tierra en Colorado State University.",
+      "email": "freddy.saavedra@upla.cl",
+      "foto": "assets/img/team/Freddy_Saavedra.webp"
+    },
+    {
+      "nombre": "Ana Hernández-Duarte",
+      "rol": "Directiva",
+      "grupo": "direccion",
+      "bio": "Arquitecta, MSc. en Desarrollo Regional y Medio Ambiente, PhD. en Ciencias Ambientales.",
+      "email": "ana.hernandez@upla.cl",
+      "foto": "assets/img/team/Ana_Hernandez.webp"
+    },
+    {
+      "nombre": "Marcelo Leguia",
+      "rol": "Directivo",
+      "grupo": "direccion",
+      "bio": "Geógrafo, MSc. en Áreas Silvestres y Conservación de la Naturaleza en Universidad de Chile.",
+      "email": "marcelo.leguia@upla.cl",
+      "foto": "assets/img/team/Marcelo_Leguia.webp"
+    },
+    {
+      "nombre": "Carlos Romero",
+      "rol": "Investigador",
+      "grupo": "investigacion",
+      "bio": "Geógrafo, MSc. en Gestión Ambiental. Profesor asociado FCNE, Universidad de Playa Ancha.",
+      "email": "cromero@upla.cl",
+      "foto": "assets/img/team/Carlos_Romero.webp"
+    },
+    {
+      "nombre": "Valentina Contreras",
+      "rol": "Asistente de investigación",
+      "grupo": "investigacion",
+      "bio": "Geógrafa de la Universidad de Playa Ancha.",
+      "email": "valentina.contreras@upla.cl",
+      "foto": "assets/img/team/Valentina_Contreras.webp"
+    },
+    {
+      "nombre": "Javier Medina",
+      "rol": "Asistente de investigación",
+      "grupo": "investigacion",
+      "bio": "Geólogo de la Universidad Andrés Bello (Viña del Mar).",
+      "email": "javier.medina.men@upla.cl",
+      "foto": "assets/img/team/Javier_Medina.webp"
+    },
+    {
+      "nombre": "Pablo Arancibia Ramos",
+      "rol": "Asistente de investigación",
+      "grupo": "investigacion",
+      "bio": "Geógrafo de la Universidad de Playa Ancha.",
+      "email": "pablo.arancibia.ramos@upla.cl",
+      "foto": "assets/img/team/Pablo_Arancibia.webp"
+    },
+    {
+      "nombre": "Gabriela Muñoz",
+      "rol": "Asistente de investigación",
+      "grupo": "investigacion",
+      "bio": "Geógrafa de la Universidad de Playa Ancha.",
+      "email": "gabriela.munoz@upla.cl",
+      "foto": "assets/img/team/gabriela.webp"
+    },
+    {
+      "nombre": "Manuel Narbona",
+      "rol": "Periodista",
+      "grupo": "comunicaciones",
+      "bio": "Periodista de la Pontificia Universidad Católica de Valparaíso, con experiencia en comunicación científica en proyectos I+D.",
+      "email": "manuel@narbona.cl",
+      "foto": "assets/img/team/Manuel_Narbona.webp"
+    }
+  ],
+  "antiguos": [
+    {
+      "nombre": "Yael Aguirre",
+      "bio": "Geógrafa de la Universidad de Playa Ancha.",
+      "foto": "assets/img/team/Yael_aguirre.webp"
+    },
+    {
+      "nombre": "Daniela González",
+      "bio": "Geógrafa de la Universidad de Playa Ancha.",
+      "foto": ""
+    }
+  ]
+}
