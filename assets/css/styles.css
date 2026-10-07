@@ -83,6 +83,50 @@
   background: var(--sky);
 }
 
+/* Colores temáticos tomados del logo: cada tema usa el suyo */
+[data-tone="nieve"] {
+  --tone: var(--cyan);
+  --tone-ink: #0b6f7d;
+}
+
+[data-tone="vegetacion"] {
+  --tone: var(--green);
+  --tone-ink: #2e7d4f;
+}
+
+[data-tone="fuego"] {
+  --tone: var(--ochre);
+  --tone-ink: #9a5a0c;
+}
+
+[data-tone="ciudad"] {
+  --tone: var(--navy);
+  --tone-ink: var(--navy);
+}
+
+[data-tone="dron"] {
+  --tone: var(--teal);
+  --tone-ink: #1f6f6a;
+}
+
+/* Costuras de píxeles entre secciones (ver seams.js) */
+.seam {
+  position: relative;
+  height: clamp(56px, 7vw, 98px);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.seam--soft {
+  height: 28px;
+}
+
+.seam canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -201,24 +245,27 @@ h4 {
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   color: var(--accent);
   margin-bottom: 22px;
+  font-family: var(--f-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
+/* Tres píxeles del mosaico del logo */
 .eyebrow::before {
   content: "";
-  width: 8px;
-  height: 8px;
-  background: currentColor;
-  box-shadow: 0 0 12px currentColor;
+  width: 6px;
+  height: 6px;
+  background: var(--ochre);
+  box-shadow: 7px 0 0 var(--green), 14px 0 0 var(--cyan), 7px -7px 0 var(--sand);
 }
 
 .text-gradient {
-  background: linear-gradient(100deg, var(--cyan-2), var(--green) 45%, var(--sand) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--sand);
 }
 
 /* ---------- Botones ---------- */
@@ -306,7 +353,7 @@ h4 {
 }
 
 .site-header.is-scrolled {
-  background: rgba(4, 9, 15, 0.78);
+  background: rgba(6, 22, 34, 0.94);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-color: var(--line);
@@ -735,17 +782,14 @@ h4 {
   color: var(--muted);
 }
 
-.grid-lines {
+.grid-lines,
+.topo {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
-  opacity: 0.45;
+  background: url("../img/curvas.svg") center / cover no-repeat;
+  mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 45%, black 100%);
 }
 
 /* ---------- Manifiesto ---------- */
@@ -782,6 +826,25 @@ h4 {
 .about-grid__side p {
   color: var(--muted);
   margin: 0 0 28px;
+}
+
+.field-photo {
+  margin: 40px 0 0;
+  transform: rotate(-1.2deg);
+}
+
+.field-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 8px solid #fff;
+  box-shadow: 0 20px 40px -24px rgba(10, 34, 51, 0.5);
+}
+
+.field-photo figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 @media (max-width: 900px) {
@@ -885,9 +948,17 @@ h4 {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 6px 12px;
-  border-radius: 999px;
-  background: var(--navy);
+  border-radius: 4px;
+  background: var(--tone, var(--navy));
+  color: var(--night);
+}
+
+.case[data-tone="ciudad"] .case__tag {
   color: #e6eef2;
+}
+
+.case {
+  border-top: 4px solid var(--tone, var(--navy));
 }
 
 .case dl {
@@ -926,7 +997,6 @@ h4 {
   border-block: 1px solid var(--line);
   overflow: hidden;
   padding-block: 26px;
-  background: var(--bg-2);
 }
 
 .marquee__track {
@@ -962,10 +1032,23 @@ h4 {
 }
 
 .marquee__item::after {
-  content: "✦";
+  content: "";
+  width: 8px;
+  height: 8px;
   margin-left: 42px;
-  color: var(--accent);
-  font-size: 0.8rem;
+  background: var(--sep, var(--cyan));
+}
+
+.marquee__item:nth-child(4n + 1) {
+  --sep: var(--ochre);
+}
+
+.marquee__item:nth-child(4n + 2) {
+  --sep: var(--green);
+}
+
+.marquee__item:nth-child(4n + 3) {
+  --sep: var(--sand);
 }
 
 @keyframes marquee {
@@ -1399,6 +1482,15 @@ h4 {
   -webkit-backdrop-filter: blur(6px);
 }
 
+.line-card__num::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 9px;
+  background: var(--tone, var(--cyan));
+}
+
 .line-card h3 {
   font-size: clamp(1.5rem, 2.2vw, 2rem);
   margin-bottom: 12px;
@@ -1482,8 +1574,19 @@ h4 {
   left: 0;
   width: 9px;
   height: 9px;
+  background: var(--ochre);
+}
+
+.step:nth-child(2)::before {
+  background: #e3b43a;
+}
+
+.step:nth-child(3)::before {
+  background: var(--green);
+}
+
+.step:nth-child(4)::before {
   background: var(--cyan);
-  box-shadow: 0 0 14px var(--cyan);
 }
 
 .step + .step::before {
@@ -1682,8 +1785,15 @@ h4 {
 .news-card__meta .tag {
   background: transparent;
   border-color: rgba(10, 34, 51, 0.2);
-  color: var(--teal);
+  color: var(--tone-ink, var(--accent));
   backdrop-filter: none;
+}
+
+.news-card__meta .tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--tone, var(--accent));
 }
 
 .news-card h3 {
@@ -2100,10 +2210,10 @@ h4 {
   width: 420px;
   height: 420px;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.92;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: 0;
 }
 
 .cta__pixels span {
@@ -2934,8 +3044,8 @@ h4 {
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--cyan), var(--green));
+  height: 3px;
+  background: var(--tone, var(--cyan));
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -2982,7 +3092,12 @@ h4 {
 }
 
 .showcase__meta .tag {
-  color: var(--accent-2);
+  color: var(--tone-ink, var(--accent-2));
+  border-color: var(--tone, var(--line-2));
+}
+
+.showcase__item.is-active .showcase__num {
+  color: var(--tone-ink, var(--accent));
 }
 
 .showcase__info p {
@@ -3073,7 +3188,16 @@ h4 {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--tone-ink, var(--accent));
+}
+
+.pcard__num::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  background: var(--tone, var(--accent));
 }
 
 .pcard h3 {

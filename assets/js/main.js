@@ -148,14 +148,21 @@
     run();
   }
 
-  // ---------- Píxeles decorativos del CTA ----------
-  const palette = ["#0b3c5d", "#2e8c7a", "#5cb87a", "#2bb6c8", "#e39a2d", "#efe58f", "#ffffff"];
+  // ---------- Mosaico del CTA: cielo ocre→arena arriba, ladera verde→agua abajo (como el logo) ----------
+  const sky = ["#e39a2d", "#e3b43a", "#e9c95a", "#efe58f", "#f3eebc"];
+  const land = ["#2e8c7a", "#5cb87a", "#1f6f6a", "#2bb6c8", "#a8dcdc"];
   document.querySelectorAll("[data-pixels]").forEach((el) => {
     for (let i = 0; i < 49; i++) {
+      const r = Math.floor(i / 7), c = i % 7;
       const s = document.createElement("span");
-      const show = Math.random() > 0.35;
-      s.style.background = show ? palette[Math.floor(Math.random() * palette.length)] : "transparent";
-      s.style.opacity = (0.3 + Math.random() * 0.7).toFixed(2);
+      const ridge = 3 + Math.round(Math.sin(c * 0.9) * 1.2);
+      if (r < ridge) {
+        const k = Math.min(sky.length - 1, Math.max(0, Math.round((r + c) / 3 + Math.random() - 0.5)));
+        s.style.background = Math.random() < 0.82 ? sky[k] : "transparent";
+      } else {
+        s.style.background = Math.random() < 0.8 ? land[Math.floor(Math.random() * land.length)] : "transparent";
+      }
+      if (r === ridge && Math.random() < 0.35) s.style.background = "#ffffff";
       el.appendChild(s);
     }
   });

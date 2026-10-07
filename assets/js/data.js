@@ -41,6 +41,17 @@
     return "Laboratorio";
   }
 
+  const TONES = {
+    Nieve: "nieve",
+    Océanos: "nieve",
+    "Nieve y agua": "nieve",
+    Incendios: "fuego",
+    Ciudades: "ciudad",
+    Vegetación: "vegetacion",
+    Drones: "dron",
+  };
+  const toneAttr = (k) => (TONES[k] ? ` data-tone="${TONES[k]}"` : "");
+
   function publisherOf(doi) {
     for (const key in PUBLISHERS) if (doi.includes(key)) return PUBLISHERS[key];
     const m = doi.match(/10\.\d{4,5}/);
@@ -71,7 +82,7 @@
     return `
       <a class="news-card" href="${esc(n.url)}" target="_blank" rel="noopener" data-reveal style="--d:${(i % 3) * 0.08}s">
         <div class="news-card__img"><img src="${esc(n.imagen)}" alt="" loading="lazy" decoding="async"></div>
-        <div class="news-card__meta"><span class="tag">${topicOf(n)}</span><time datetime="${esc(n.fecha)}">${fmtDate(n.fecha)}</time></div>
+        <div class="news-card__meta"><span class="tag"${toneAttr(topicOf(n))}>${topicOf(n)}</span><time datetime="${esc(n.fecha)}">${fmtDate(n.fecha)}</time></div>
         <h3>${esc(n.titulo)}</h3>
         <p>${esc(n.subtitulo)}</p>
       </a>`;
@@ -326,7 +337,7 @@
       .map(
         (p, i) => `
         <li>
-          <a class="showcase__item" href="${esc(p.url)}" target="_blank" rel="noopener" data-i="${i}">
+          <a class="showcase__item" href="${esc(p.url)}" target="_blank" rel="noopener" data-i="${i}"${toneAttr(p.categoria)}>
             <span class="showcase__num">${pad(i)}</span>
             <span class="showcase__title">${esc(p.titulo)}<small>${esc(p.categoria)} · ${esc(p.proyecto)}</small></span>
             <span class="showcase__go">${ARROW}</span>
@@ -374,6 +385,7 @@
       $("[data-sc-url]").textContent = shortUrl(p.url);
       $("[data-sc-idx]").textContent = `${pad(i)} / ${pad(list.length - 1)}`;
       $("[data-sc-cat]").textContent = p.categoria;
+      $(".showcase__info").dataset.tone = TONES[p.categoria] || "";
       $("[data-sc-proj]").textContent = p.proyecto;
       $("[data-sc-desc]").textContent = p.descripcion;
       $("[data-sc-chips]").innerHTML = p.chips.map((c) => `<span class="chip">${esc(c)}</span>`).join("");
@@ -402,7 +414,7 @@
 
   function platformCard(p, i) {
     return `
-      <article class="pcard" data-cat="${esc(p.categoria)}" data-reveal style="--d:${(i % 2) * 0.08}s">
+      <article class="pcard" data-cat="${esc(p.categoria)}"${toneAttr(p.categoria)} data-reveal style="--d:${(i % 2) * 0.08}s">
         <a class="pcard__media browser" href="${esc(p.url)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
           ${browserBar(p)}
           <div class="browser__view"><img src="${esc(p.imagen)}" alt="" loading="lazy" decoding="async"></div>
