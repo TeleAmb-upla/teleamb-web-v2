@@ -5,19 +5,23 @@
 (function () {
   const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
 
-  const LAB_AUTHORS = /(Freddy(\s+A\.|\s+Alejandro)?\s+Saavedra(\s+Pimentel)?|F\.\s*Saavedra|Marcelo\s+Legu[ií]a(\s+Cruz)?|Ana\s+Hern[aá]ndez(-Duarte)?|Hern[aá]ndez-Duarte|Carlos\s+Romero|Valentina(\s+Ignacia)?\s+Contreras(\s+Figueroa)?|Javier\s+Medina|Pablo\s+Arancibia|Yael\s+Aguirre|Daniela\s+Gonz[aá]lez)/g;
+  const LAB_AUTHORS = /(Freddy(\s+A\.|\s+Alejandro)?\s+Saavedra(\s+Pimentel)?|F\.\s*Saavedra|Marcelo\s+Legu[ií]a(\s+Cruz)?|Ana\s+Hern[aá]ndez([\s-]Duarte)?|Hern[aá]ndez-Duarte|Carlos(\s+Eduardo)?\s+Romero|Valentina(\s+Ignacia)?\s+Contreras(\s+Figueroa)?|Javier\s+Medina(\s+Mendoza)?|Pablo\s+Arancibia|Yael\s+Aguirre|Daniela\s+Gonz[aá]lez)/g;
 
   const PUBLISHERS = {
     "10.1002/joc": "Int. Journal of Climatology",
     "10.1002/2017WR": "Water Resources Research",
     "10.1002/essoar": "ESS Open Archive",
     "10.1016/j.jenvman": "J. Environmental Management",
+    "10.5194/egusphere": "EGUsphere",
     "10.5194/tc": "The Cryosphere",
     "10.5194/os": "Ocean Science",
     "10.5194/essd": "Earth System Science Data",
     "10.3389/feart": "Frontiers in Earth Science",
     "10.3390/fire": "Fire · MDPI",
     "10.3390/rs": "Remote Sensing · MDPI",
+    "10.20944/preprints": "Preprints.org",
+    "10.48162": "Boletín de Estudios Geográficos",
+    "10.15359": "Uniciencia",
     "revistas.ubiobio.cl": "Revista Urbano · UBB",
   };
 
@@ -49,6 +53,8 @@
     Ciudades: "ciudad",
     Vegetación: "vegetacion",
     Drones: "dron",
+    Glaciares: "nieve",
+    Territorio: "ciudad",
   };
   const toneAttr = (k) => (TONES[k] ? ` data-tone="${TONES[k]}"` : "");
 
@@ -145,59 +151,142 @@
   }
 
   // ---------- Publicaciones ----------
+  const OPEN_ACCESS = ["10.5194", "10.3389", "10.3390", "10.20944", "10.48162", "10.15359", "10.1002/essoar", "revistas.ubiobio"];
+  const PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>';
+  const PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>';
+
   function authorsHTML(a) {
     return esc(a).replace(LAB_AUTHORS, (m) => `<b>${m}</b>`);
   }
 
-  function pubRow(p, expandable) {
+  function shortAuthors(a, max) {
+    const list = a.split(/,\s*/);
+    if (list.length <= max + 1) return authorsHTML(a);
+    return `${authorsHTML(list.slice(0, max - 1).join(", "))} … ${authorsHTML(list[list.length - 1])} <span class="paper__more">+${list.length - max} ${list.length - max === 1 ? "autor" : "autores"}</span>`;
+  }
+
+  function pubTopic(p) {
+    const t = (p.Titulo?.en + " " + p.Titulo?.es).toLowerCase();
+    if (/incendi|fire|wildfire|combustible|erosi/.test(t)) return "Incendios";
+    if (/glaciar|glacier/.test(t)) return "Glaciares";
+    if (/pluma|plume|océan|ocean/.test(t)) return "Océanos";
+    if (/remoción|periurban|planificación/.test(t)) return "Territorio";
+    return "Nieve";
+  }
+
+  const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
+
+  function citation(p) {
+    return `${p.Autor} (${p.Año}). ${p.Titulo?.en || p.Titulo?.es}. ${publisherOf(p.DOI)}. ${p.DOI}`;
+  }
+
+  function paperHTML(p, compact) {
     const title = p.Titulo?.es || p.Titulo?.en || "";
     const abstract = p.Extracto?.es || p.Extracto?.en || "";
+    const topic = pubTopic(p);
+    const journal = publisherOf(p.DOI);
+    const oa = OPEN_ACCESS.some((k) => p.DOI.includes(k));
     const id = "pub-" + esc(p.ID);
-    if (!expandable) {
-      return `
-        <a class="pub" href="${esc(p.DOI)}" target="_blank" rel="noopener" data-thumb="${esc(p.Image)}" data-reveal>
-          <span class="pub__year">${esc(p.Año)}</span>
-          <span class="pub__title">${esc(title)}<small>${authorsHTML(p.Autor)}</small></span>
-          <span class="pub__journal">${esc(publisherOf(p.DOI))}</span>
-          <span class="pub__go">${ARROW}</span>
-        </a>`;
-    }
+    const a = p.Audio;
+    const listen = a
+      ? `<button class="listen" type="button" data-audio="${esc(a.src)}" data-dur="${a.duracion || 0}" aria-label="Escuchar resumen narrado por ${esc(a.voz)} (${mmss(a.duracion || 0)})">
+          <span class="listen__icon">${PLAY}</span>
+          <span class="listen__txt"><b>Escuchar a ${esc(a.voz.split(" ")[0])}</b><small><span data-time>${mmss(a.duracion || 0)}</span> · ${a.sintetica ? "voz sintetizada" : "en su voz"}</small></span>
+          <span class="listen__bar" aria-hidden="true"><i></i></span>
+        </button>`
+      : "";
+    const panels = compact
+      ? ""
+      : `<div class="paper__panel" id="${id}-abs" hidden><h4>Resumen científico</h4><p>${esc(abstract)}</p></div>
+         ${a ? `<div class="paper__panel" id="${id}-tr" hidden><h4>Transcripción del audio</h4><p>${esc(a.transcripcion)}</p>${a.sintetica ? `<p class="paper__note">Narración con voz sintetizada a partir de un guion en primera persona. Será reemplazada por la grabación de ${esc(a.voz)}.</p>` : ""}</div>` : ""}`;
+    const tools = compact
+      ? ""
+      : `<button class="paper__tool" type="button" aria-expanded="false" aria-controls="${id}-abs" data-panel>Resumen científico</button>
+         ${a ? `<button class="paper__tool" type="button" aria-expanded="false" aria-controls="${id}-tr" data-panel>Transcripción</button>` : ""}
+         <button class="paper__tool" type="button" data-cite="${esc(citation(p))}">Citar</button>`;
     return `
-      <article class="pub pub--expandable" data-reveal>
-        <span class="pub__year">${esc(p.Año)}</span>
-        <button class="pub__toggle" type="button" aria-expanded="false" aria-controls="${id}" data-toggle>
-          <span class="pub__title">${esc(title)}<small>${authorsHTML(p.Autor)}</small></span>
-        </button>
-        <span class="pub__journal">${esc(publisherOf(p.DOI))}</span>
-        <a class="pub__go" href="${esc(p.DOI)}" target="_blank" rel="noopener" aria-label="Abrir publicación">${ARROW}</a>
-        <div class="pub-detail" id="${id}" hidden>
-          <img src="${esc(p.Image)}" alt="" loading="lazy">
-          <div>
-            ${p.Titulo?.en ? `<p class="mono" style="color:var(--accent);margin-bottom:12px">${esc(p.Titulo.en)}</p>` : ""}
-            <p>${esc(abstract)}</p>
+      <article class="paper${compact ? " paper--compact" : ""}" data-topic="${esc(topic)}"${toneAttr(topic)} data-reveal>
+        <div class="paper__main">
+          <p class="paper__kicker">
+            <span class="paper__topic">${esc(topic)}</span>
+            <span>${esc(p.Tipo || "Artículo")}</span>
+            ${p.Preprint ? '<span class="paper__badge">Preprint</span>' : ""}
+            ${oa ? '<span class="paper__oa">Acceso abierto</span>' : ""}
+            <time${p.Fecha ? ` datetime="${esc(p.Fecha)}"` : ""}>${p.Fecha ? fmtDate(p.Fecha) : esc(p.Año)}</time>
+          </p>
+          <h3 class="paper__title"><a href="${esc(p.DOI)}" target="_blank" rel="noopener">${esc(title)}</a></h3>
+          ${!compact && p.Titulo?.en ? `<p class="paper__orig" lang="en">${esc(p.Titulo.en)}</p>` : ""}
+          ${p.Divulgacion ? `<p class="paper__stand">${esc(p.Divulgacion)}</p>` : ""}
+          <p class="paper__authors">${shortAuthors(p.Autor, compact ? 4 : 7)}</p>
+          <p class="paper__source"><i>${esc(journal)}</i>${p.Estado ? ` · ${esc(p.Estado)}` : ""}</p>
+          <div class="paper__actions">
+            ${listen}
+            ${tools}
+            <a class="paper__tool paper__tool--go" href="${esc(p.DOI)}" target="_blank" rel="noopener">Leer artículo ${ARROW}</a>
           </div>
+          ${panels}
         </div>
+        <a class="paper__fig" href="${esc(p.DOI)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="${esc(p.Image)}" alt="" loading="lazy" decoding="async">
+        </a>
       </article>`;
   }
 
-  function attachThumb(container) {
-    const thumb = document.createElement("div");
-    thumb.className = "pub__thumb";
-    thumb.innerHTML = "<img alt=''>";
-    document.body.appendChild(thumb);
-    const img = thumb.querySelector("img");
-    container.addEventListener("pointerover", (e) => {
-      const row = e.target.closest("[data-thumb]");
-      if (!row || e.pointerType !== "mouse") return;
-      img.src = row.dataset.thumb;
-      thumb.classList.add("is-on");
-    });
-    container.addEventListener("pointerout", (e) => {
-      if (!e.relatedTarget || !e.relatedTarget.closest || !e.relatedTarget.closest("[data-thumb]")) thumb.classList.remove("is-on");
-    });
-    container.addEventListener("pointermove", (e) => {
-      thumb.style.left = e.clientX + 170 + "px";
-      thumb.style.top = e.clientY + "px";
+  // Un solo reproductor para todos los resúmenes en audio.
+  const player = new Audio();
+  player.preload = "none";
+  let playing = null;
+
+  function setListen(btn, state, t) {
+    if (!btn) return;
+    btn.classList.toggle("is-playing", state === "play");
+    btn.classList.toggle("is-started", state !== "stop");
+    btn.querySelector(".listen__icon").innerHTML = state === "play" ? PAUSE : PLAY;
+    const dur = player.duration || +btn.dataset.dur || 0;
+    btn.querySelector("[data-time]").textContent = state === "stop" ? mmss(+btn.dataset.dur) : `${mmss(t || 0)} / ${mmss(dur)}`;
+    btn.style.setProperty("--p", state === "stop" ? 0 : dur ? (t || 0) / dur : 0);
+  }
+
+  player.addEventListener("timeupdate", () => setListen(playing, player.paused ? "pause" : "play", player.currentTime));
+  player.addEventListener("ended", () => {
+    setListen(playing, "stop");
+    playing = null;
+  });
+
+  function bindPapers(root) {
+    root.addEventListener("click", (e) => {
+      const listen = e.target.closest("[data-audio]");
+      if (listen) {
+        if (playing === listen) {
+          if (player.paused) player.play();
+          else player.pause();
+          setListen(listen, player.paused ? "pause" : "play", player.currentTime);
+          return;
+        }
+        setListen(playing, "stop");
+        playing = listen;
+        player.src = listen.dataset.audio;
+        player.play();
+        setListen(listen, "play", 0);
+        return;
+      }
+      const panel = e.target.closest("[data-panel]");
+      if (panel) {
+        const paper = panel.closest(".paper");
+        paper.querySelectorAll("[data-panel]").forEach((b) => {
+          const open = b === panel && b.getAttribute("aria-expanded") !== "true";
+          b.setAttribute("aria-expanded", String(open));
+          document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+        });
+        return;
+      }
+      const cite = e.target.closest("[data-cite]");
+      if (cite && navigator.clipboard) {
+        navigator.clipboard.writeText(cite.dataset.cite).then(() => {
+          cite.textContent = "Cita copiada";
+          setTimeout(() => (cite.textContent = "Citar"), 1800);
+        });
+      }
     });
   }
 
@@ -205,51 +294,55 @@
     const el = document.querySelector("[data-pubs]");
     if (!el) return;
     try {
-      const all = (await getJSON("publications")).slice().sort((a, b) => b.Año - a.Año || b.ID - a.ID);
+      const all = (await getJSON("publications"))
+        .slice()
+        .sort((a, b) => b.Año - a.Año || String(b.Fecha || "").localeCompare(String(a.Fecha || "")) || b.ID - a.ID);
       document.querySelectorAll("[data-pubs-count]").forEach((c) => {
         c.dataset.count = all.length;
         c.textContent = all.length;
       });
       window.TA_observeCounters && window.TA_observeCounters();
+      bindPapers(el);
 
       const limit = parseInt(el.dataset.pubs, 10);
       if (limit) {
-        el.innerHTML = all.slice(0, limit).map((p) => pubRow(p, false)).join("");
-        attachThumb(el);
+        el.innerHTML = all.slice(0, limit).map((p) => paperHTML(p, true)).join("");
         return done(el);
       }
 
       const search = document.querySelector("[data-pubs-search]");
       const filters = document.querySelector("[data-pubs-filters]");
-      const years = ["Todos", ...new Set(all.map((p) => String(p.Año)))];
-      let year = "Todos";
+      const topics = ["Todas", ...new Set(all.map(pubTopic)), "Con audio"];
+      let topic = "Todas";
 
-      filters.innerHTML = years
-        .map((y) => `<button class="filter-btn" type="button" aria-pressed="${y === year}" data-y="${y}">${y}</button>`)
+      filters.innerHTML = topics
+        .map((t) => `<button class="filter-btn" type="button" aria-pressed="${t === topic}" data-t="${esc(t)}"${toneAttr(t)}>${esc(t)}</button>`)
         .join("");
 
       const draw = () => {
         const q = (search.value || "").toLowerCase().trim();
         const list = all.filter((p) => {
-          const hay = [p.Titulo?.es, p.Titulo?.en, p.Autor, p.Extracto?.es].join(" ").toLowerCase();
-          return (year === "Todos" || String(p.Año) === year) && (!q || hay.includes(q));
+          const hay = [p.Titulo?.es, p.Titulo?.en, p.Autor, p.Divulgacion, p.Extracto?.es].join(" ").toLowerCase();
+          const ok = topic === "Todas" || (topic === "Con audio" ? !!p.Audio : pubTopic(p) === topic);
+          return ok && (!q || hay.includes(q));
         });
-        el.innerHTML = list.length ? list.map((p) => pubRow(p, true)).join("") : '<p class="empty">Sin resultados.</p>';
+        if (playing && !el.contains(playing)) playing = null;
+        const years = [...new Set(list.map((p) => p.Año))];
+        el.innerHTML = list.length
+          ? years
+              .map((y) => {
+                const items = list.filter((p) => p.Año === y);
+                return `<section class="paper-year"><h2 class="paper-year__head"><span>${y}</span><small>${items.length} ${items.length === 1 ? "publicación" : "publicaciones"}</small></h2>${items.map((p) => paperHTML(p, false)).join("")}</section>`;
+              })
+              .join("")
+          : '<p class="empty">Sin resultados.</p>';
         done(el);
       };
 
-      el.addEventListener("click", (e) => {
-        const btn = e.target.closest("[data-toggle]");
-        if (!btn) return;
-        const detail = document.getElementById(btn.getAttribute("aria-controls"));
-        const open = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!open));
-        detail.hidden = open;
-      });
       filters.addEventListener("click", (e) => {
-        const b = e.target.closest("[data-y]");
+        const b = e.target.closest("[data-t]");
         if (!b) return;
-        year = b.dataset.y;
+        topic = b.dataset.t;
         filters.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
         draw();
       });
