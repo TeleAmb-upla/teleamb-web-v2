@@ -125,7 +125,13 @@
     },
     { threshold: 0.5 }
   );
-  window.TA_observeCounters = () => document.querySelectorAll("[data-count]").forEach((el) => counterObserver.observe(el));
+  // El HTML trae el valor final (legible sin JS); la animación parte de cero.
+  window.TA_observeCounters = () =>
+    document.querySelectorAll("[data-count]").forEach((el) => {
+      if (!reduceMotion && !el.dataset.counted) el.textContent = "0";
+      el.dataset.counted = "1";
+      counterObserver.observe(el);
+    });
   window.TA_observeCounters();
 
   // ---------- Parallax ----------

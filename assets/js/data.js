@@ -162,7 +162,7 @@
         <div class="pub-detail" id="${id}" hidden>
           <img src="${esc(p.Image)}" alt="" loading="lazy">
           <div>
-            ${p.Titulo?.en ? `<p class="mono" style="color:var(--cyan);margin-bottom:12px">${esc(p.Titulo.en)}</p>` : ""}
+            ${p.Titulo?.en ? `<p class="mono" style="color:var(--accent);margin-bottom:12px">${esc(p.Titulo.en)}</p>` : ""}
             <p>${esc(abstract)}</p>
           </div>
         </div>
