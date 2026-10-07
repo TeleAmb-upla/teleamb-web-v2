@@ -7,7 +7,11 @@
     "url": "https://observatorionieves.cl/",
     "imagen": "assets/img/plataformas/nieves.webp",
     "descripcion": "Cobertura de nieve diaria para todo Chile continental a partir de MODIS Terra y Aqua, con estadísticas por cuenca y boletines periódicos junto a la DGA.",
-    "chips": ["MODIS", "Cobertura nival", "Cuencas"]
+    "chips": [
+      "MODIS",
+      "Cobertura nival",
+      "Cuencas"
+    ]
   },
   {
     "id": "hidromet",
@@ -17,7 +21,11 @@
     "url": "https://javiermedinamen-art.github.io/hidromet",
     "imagen": "assets/img/plataformas/hidromet.webp",
     "descripcion": "Explorador de estaciones y comparación entre cuencas de la altura de nieve mensual y anual en los Andes del Sur, construido sobre registros diarios con control de calidad.",
-    "chips": ["Estaciones", "Altura de nieve", "Chile · Argentina"]
+    "chips": [
+      "Estaciones",
+      "Altura de nieve",
+      "Chile · Argentina"
+    ]
   },
   {
     "id": "nieves-hr",
@@ -27,7 +35,11 @@
     "url": "https://ee-observatorionieves.projects.earthengine.app/view/visualizador-de-nieve-de-alta-resolucion---hito-1-fondef-it",
     "imagen": "assets/img/plataformas/nieves_hr.webp",
     "descripcion": "Persistencia mensual de nieve en 2024 con Landsat 8/9 y Sentinel-2 para seis cuencas: Elqui, Aconcagua, Maipo, Itata, Toltén y Baker. Comparador entre misiones y gráfico de persistencia mensual.",
-    "chips": ["Landsat 8/9", "Sentinel-2", "6 cuencas"]
+    "chips": [
+      "Landsat 8/9",
+      "Sentinel-2",
+      "6 cuencas"
+    ]
   },
   {
     "id": "genius",
@@ -37,7 +49,11 @@
     "url": "https://plataformagenius.cl/",
     "imagen": "assets/img/plataformas/genius.webp",
     "descripcion": "Indicadores satelitales urbanos para Quilpué y la Región de Valparaíso: áreas verdes, contaminación del aire, huella urbana, luminosidad y temperatura superficial. Con U. de Chile, Municipalidad de Quilpué, GORE Valparaíso y CSU.",
-    "chips": ["Áreas verdes", "Temperatura superficial", "Huella urbana"]
+    "chips": [
+      "Áreas verdes",
+      "Temperatura superficial",
+      "Huella urbana"
+    ]
   },
   {
     "id": "incendio",
@@ -47,7 +63,11 @@
     "url": "https://ee-javiermedinamen.projects.earthengine.app/view/visualizador---incendio-2024",
     "imagen": "assets/img/plataformas/incendio.webp",
     "descripcion": "Áreas quemadas y severidad del gran incendio de febrero de 2024 en Viña del Mar y sus alrededores, con un comparador de imágenes antes y después.",
-    "chips": ["Severidad", "Áreas quemadas", "Antes / después"]
+    "chips": [
+      "Severidad",
+      "Áreas quemadas",
+      "Antes / después"
+    ]
   },
   {
     "id": "jbn",
@@ -57,17 +77,10 @@
     "url": "https://ee-teleamb.projects.earthengine.app/view/visualizador-de-vegetacin---jbn",
     "imagen": "assets/img/plataformas/jbn.webp",
     "descripcion": "Series de índices de vegetación normalizados para seguir el estado y la evolución de la cobertura vegetal del Jardín Botánico Nacional de Viña del Mar.",
-    "chips": ["Índices normalizados", "Series de tiempo"]
-  },
-  {
-    "id": "pumahuida",
-    "titulo": "Monitoreo vegetacional en Pumahuida",
-    "proyecto": "Fondecyt · con PUC",
-    "categoria": "Vegetación",
-    "url": "https://teleamb-upla.github.io/fondecyt_puc/",
-    "imagen": "assets/img/plataformas/pumahuida.webp",
-    "descripcion": "Imágenes de alta resolución y series temporales de índices de vegetación para el seguimiento de Pumahuida, en colaboración con la Pontificia Universidad Católica de Chile.",
-    "chips": ["Alta resolución", "Series temporales"]
+    "chips": [
+      "Índices normalizados",
+      "Series de tiempo"
+    ]
   },
   {
     "id": "salar",
@@ -77,6 +90,24 @@
     "url": "https://teleamb-upla.github.io/salares_web/",
     "imagen": "assets/img/plataformas/salar.webp",
     "descripcion": "Ortomosaicos de dron con capas RGB, NDVI, NDCI, NDWI y temperatura superficial (LST) para el monitoreo de humedales altoandinos del Salar del Huasco.",
-    "chips": ["Dron", "NDVI · NDWI", "LST"]
+    "chips": [
+      "Dron",
+      "NDVI · NDWI",
+      "LST"
+    ]
+  },
+  {
+    "id": "aconcagua-vivo",
+    "titulo": "Aconcagua Vivo",
+    "proyecto": "FNDR · Gobierno Regional de Valparaíso",
+    "categoria": "Biodiversidad",
+    "url": "https://teleamb-upla.github.io/FNDR_V2/",
+    "imagen": "assets/img/plataformas/aconcagua.webp",
+    "descripcion": "Programa participativo para reconocer, valorar y promover la biodiversidad de la cuenca media del Aconcagua. Cualquier persona puede registrarse y sumar observaciones georreferenciadas en el explorador.",
+    "chips": [
+      "Ciencia ciudadana",
+      "Biodiversidad",
+      "Explorador"
+    ]
   }
 ]

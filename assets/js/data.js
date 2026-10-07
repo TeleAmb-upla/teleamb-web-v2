@@ -5,7 +5,7 @@
 (function () {
   const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
 
-  const LAB_AUTHORS = /(Freddy(\s+A\.|\s+Alejandro)?\s+Saavedra(\s+Pimentel)?|F\.\s*Saavedra|Marcelo\s+Legu[ií]a(\s+Cruz)?|Ana\s+Hern[aá]ndez([\s-]Duarte)?|Hern[aá]ndez-Duarte|Carlos(\s+Eduardo)?\s+Romero|Valentina(\s+Ignacia)?\s+Contreras(\s+Figueroa)?|Javier\s+Medina(\s+Mendoza)?|Pablo\s+Arancibia|Yael\s+Aguirre|Daniela\s+Gonz[aá]lez)/g;
+  const LAB_AUTHORS = /(Freddy(\s+A\.|\s+Alejandro)?\s+Saavedra(\s+Pimentel)?|F\.\s*Saavedra|Marcelo\s+Legu[ií]a([\s-]Cruz)?|Ana\s+Hern[aá]ndez([\s-]Duarte)?|Hern[aá]ndez-Duarte|Carlos(\s+Eduardo)?\s+Romero|Valentina(\s+Ignacia)?\s+Contreras(\s+Figueroa)?|Javier\s+Medina(\s+Mendoza)?|Pablo\s+Arancibia|Yael\s+Aguirre|Daniela\s+Gonz[aá]lez)/g;
 
   const PUBLISHERS = {
     "10.1002/joc": "Int. Journal of Climatology",
@@ -17,6 +17,9 @@
     "10.5194/os": "Ocean Science",
     "10.5194/essd": "Earth System Science Data",
     "10.3389/feart": "Frontiers in Earth Science",
+    "10.3389/fenvs": "Frontiers in Environmental Science",
+    "10.1016/j.apgeog": "Applied Geography",
+    "10.1016/j.cosust": "Current Opinion in Environmental Sustainability",
     "10.3390/fire": "Fire · MDPI",
     "10.3390/rs": "Remote Sensing · MDPI",
     "10.20944/preprints": "Preprints.org",
@@ -55,6 +58,7 @@
     Drones: "dron",
     Glaciares: "nieve",
     Territorio: "ciudad",
+    Biodiversidad: "vegetacion",
   };
   const toneAttr = (k) => (TONES[k] ? ` data-tone="${TONES[k]}"` : "");
 
@@ -170,7 +174,7 @@
     if (/incendi|fire|wildfire|combustible|erosi/.test(t)) return "Incendios";
     if (/glaciar|glacier/.test(t)) return "Glaciares";
     if (/pluma|plume|océan|ocean/.test(t)) return "Océanos";
-    if (/remoción|periurban|planificación/.test(t)) return "Territorio";
+    if (/remoción|periurban|planificación|biosfera|biosphere|urban/.test(t)) return "Territorio";
     return "Nieve";
   }
 

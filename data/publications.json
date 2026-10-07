@@ -455,5 +455,82 @@
       "transcripcion": "En Chile y Argentina, millones de personas dependen del agua que guarda la nieve de la cordillera. Cuando sube la temperatura, la nieve empieza a quedarse cada vez más arriba, y eso significa menos reserva de agua para el verano. A ese límite lo llamamos línea de nieve, y desde hace décadas lo seguimos con satélites. En este trabajo revisamos más de sesenta estudios sobre los Andes, con imágenes desde 1984 hasta 2025. Y nos encontramos con un problema: cada estudio mide la línea de nieve a su manera. Usan distintos satélites, distintas definiciones y distintas escalas. Algunos reportan que, en los Andes centrales, la nieve está subiendo entre diez y treinta metros por año, pero esas cifras no se pueden comparar directamente entre sí. Nuestra conclusión es que no existe una sola medida perfecta: depende de la pregunta. Para una tormenta puntual sirve una medida local; para entender el clima de una cuenca, otra distinta. Por eso proponemos cuatro tareas: hablar el mismo idioma, informar la incertidumbre, validar en terreno, y aprovechar mejor el radar y la computación en la nube. Así podremos saber con más certeza cuánta agua nos va a entregar la cordillera.",
       "duracion": 73
     }
+  },
+  {
+    "ID": "27",
+    "DOI": "https://doi.org/10.3389/fenvs.2024.1266440",
+    "Autor": "Marcelo Leguia-Cruz, Claudia Cerda, Natalia Ortiz-Cubillos, Pablo Mansilla-Quiñones, Andrés Moreira-Muñoz",
+    "Año": 2024,
+    "Fecha": "2024-07-08",
+    "Tipo": "Artículo",
+    "Titulo": {
+      "en": "Enhancing participatory governance in biosphere reserves through co-creation of transdisciplinary and intergenerational knowledge",
+      "es": "Fortalecer la gobernanza participativa en reservas de la biosfera co-creando conocimiento transdisciplinario e intergeneracional"
+    },
+    "Divulgacion": "Una «Academia Abierta» en la Reserva de la Biosfera La Campana–Peñuelas reunió a distintas generaciones y saberes para mejorar cómo se decide sobre el territorio.",
+    "Image": "assets/img/publicaciones/27.webp",
+    "Extracto": {
+      "en": "In the context of the current global climate and biodiversity crisis, urgent action is needed to improve participatory and co-productive governance in territories under sustainability directives, such as biosphere reserves. These territories comprise a global network with the potential to apply and replicate sustainability actions, improve livelihoods, and boost climate change resilience while reducing impacts on the environment and the biodiversity in all continents. In the biosphere reserves network’s 50 years of existence, progress and setbacks have been reported in different regions around the world, and there is an urgent need to envision alternative futures. In this contribution, we describe the results and reflections of our ‘Open Academy’ that enhanced the participatory governance in La Campana–Peñuelas Biosphere Reserve in Central Chile. We crossed the traditional assessment with the principles of transdisciplinary and intergenerational knowledge co-creation. The results show that the traditional performance assessment shows a generally poor performance and reveals the weaknesses of the governance system of the reserve’s management. The extraction of water by mining and agroindustry, uncontrolled urbanization, wildfires, weak social participation, and low integration of indigenous communities are crucial issues for the performance of biosphere reserves. On the other hand, these territories have the potential as models toward post-extractive economies. Enhancing participatory governance, biosphere reserves shall serve as a) agents for configuring the future as an eco-social pact with the territory; b) pilot test areas for alternative futures; and c) places to promote the social collective as a conscious agent of the future.",
+      "es": "En el contexto de la actual crisis global del clima y la biodiversidad, se necesitan acciones urgentes para mejorar la gobernanza participativa y coproductiva en territorios con directrices de sustentabilidad, como las reservas de la biosfera. Estos territorios forman una red mundial con el potencial de aplicar y replicar acciones de sustentabilidad, mejorar los medios de vida y aumentar la resiliencia frente al cambio climático, reduciendo a la vez los impactos sobre el ambiente y la biodiversidad en todos los continentes. En los 50 años de existencia de la red de reservas de la biosfera se han reportado avances y retrocesos en distintas regiones del mundo, y es urgente imaginar futuros alternativos. En esta contribución describimos los resultados y reflexiones de nuestra «Academia Abierta», que fortaleció la gobernanza participativa en la Reserva de la Biosfera La Campana–Peñuelas, en Chile central. Cruzamos la evaluación tradicional con los principios de la co-creación de conocimiento transdisciplinario e intergeneracional. Los resultados muestran que la evaluación tradicional arroja un desempeño en general deficiente y revela las debilidades del sistema de gobernanza de la reserva. La extracción de agua por la minería y la agroindustria, la urbanización descontrolada, los incendios, la débil participación social y la baja integración de las comunidades indígenas son temas cruciales para el desempeño de las reservas de la biosfera. Por otra parte, estos territorios tienen el potencial de ser modelos hacia economías post-extractivas. Al fortalecer la gobernanza participativa, las reservas de la biosfera pueden servir como a) agentes para configurar el futuro como un pacto ecosocial con el territorio; b) áreas piloto para futuros alternativos; y c) lugares para promover lo social colectivo como agente consciente del futuro."
+    },
+    "Audio": {
+      "src": "assets/audio/27.mp3",
+      "voz": "Marcelo Leguía",
+      "genero": "m",
+      "sintetica": true,
+      "transcripcion": "La Reserva de la Biosfera La Campana–Peñuelas, entre Valparaíso y Olmué, es parte de una red mundial de territorios que deberían ser ejemplo de sustentabilidad. Pero, ¿lo están logrando? En este trabajo organizamos una Academia Abierta: un espacio donde vecinos, estudiantes, investigadores y personas de distintas generaciones evaluamos juntos cómo funciona la reserva. La evaluación tradicional mostró un desempeño más bien pobre y una gobernanza débil. Los problemas que aparecieron son concretos: la extracción de agua por la minería y la agroindustria, la urbanización sin control, los incendios, la poca participación social y la baja integración de los pueblos indígenas. Pero también vimos una oportunidad: estas reservas pueden ser lugares donde probar otras formas de vivir y de producir, y donde la comunidad decida el futuro de su territorio.",
+      "duracion": 52
+    }
+  },
+  {
+    "ID": "28",
+    "DOI": "https://doi.org/10.1016/j.apgeog.2023.103060",
+    "Autor": "Andrés Moreira-Muñoz, Camilo del Río, Marcelo Leguia-Cruz, Pablo Mansilla-Quiñones",
+    "Año": 2023,
+    "Fecha": "2023-08-15",
+    "Tipo": "Artículo",
+    "Titulo": {
+      "en": "Spatial dynamics in the urban-rural-natural interface within a social-ecological hotspot",
+      "es": "Dinámicas espaciales en la interfaz urbano-rural-natural de un hotspot socioecológico"
+    },
+    "Divulgacion": "Treinta y cinco años de imágenes satelitales muestran cómo la ciudad y los incendios avanzan sobre las zonas de mayor valor ecológico entre Valparaíso y Santiago.",
+    "Image": "assets/img/publicaciones/28.webp",
+    "Extracto": {
+      "en": "City-regions in sensitive environmental spaces such as globally recognized biodiversity hotspots face the challenge of adopting land use planning strategies that facilitate the transition towards sustainability. Though landscape-scale patterns of land use changes have already been documented in central Chile, a critical spatial assessment of the dynamics and forces shaping current land use and the conservation landscape in the Valparaíso-Santiago city-region has not yet been undertaken. We applied a satellite-based survey of urban sprawl and the extension and recurrence of wildfires spanning a 35-year timeframe from 1985 to 2020. We compared their spatial occurrence with high ecological value areas (HEVA) and analyzed the resulting patterns within the framework of an ad-hoc centrifugal forces model. Results show a constant expansion of urban sprawl and direct impacts of wildfires affecting biodiversity values. La Campana-Peñuelas Biosphere Reserve emerges as a relevant spatial feature that can facilitate the transition towards sustainability at the regional scale, although the laissez-faire stance of the dominant neoliberal economic model in Chile is the most evident threat to the transition toward sustainability. We conclude that the study area, with the attributes of a social-ecological hotspot, shows strengths such as a space capable of transformative change and the potential of a regenerative city-region.",
+      "es": "Las ciudades-región ubicadas en espacios ambientalmente sensibles, como los hotspots de biodiversidad reconocidos a nivel mundial, enfrentan el desafío de adoptar estrategias de planificación del uso del suelo que faciliten la transición hacia la sustentabilidad. Aunque los patrones de cambio de uso del suelo a escala de paisaje ya se han documentado en Chile central, aún no se había realizado una evaluación espacial crítica de las dinámicas y fuerzas que modelan el uso actual del suelo y el paisaje de conservación en la ciudad-región Valparaíso-Santiago. Aplicamos un levantamiento satelital de la expansión urbana y de la extensión y recurrencia de incendios en un período de 35 años, entre 1985 y 2020. Comparamos su ocurrencia espacial con áreas de alto valor ecológico (AAVE) y analizamos los patrones resultantes en el marco de un modelo ad hoc de fuerzas centrífugas. Los resultados muestran una expansión urbana constante e impactos directos de los incendios sobre los valores de biodiversidad. La Reserva de la Biosfera La Campana-Peñuelas emerge como un elemento espacial relevante que puede facilitar la transición hacia la sustentabilidad a escala regional, aunque la postura de laissez-faire del modelo económico neoliberal dominante en Chile es la amenaza más evidente para esa transición. Concluimos que el área de estudio, con los atributos de un hotspot socioecológico, muestra fortalezas como un espacio capaz de un cambio transformador y el potencial de una ciudad-región regenerativa."
+    },
+    "Audio": {
+      "src": "assets/audio/28.mp3",
+      "voz": "Marcelo Leguía",
+      "genero": "m",
+      "sintetica": true,
+      "transcripcion": "Chile central es uno de los lugares con más biodiversidad del planeta y, al mismo tiempo, donde vive la mayor parte de la población del país. En este estudio, liderado por Andrés Moreira-Muñoz, usamos treinta y cinco años de imágenes satelitales, entre 1985 y 2020, para seguir dos procesos en la región que va de Valparaíso a Santiago: cómo crece la ciudad hacia el campo, y dónde y cuántas veces se repiten los incendios. Luego comparamos esos mapas con las áreas de mayor valor ecológico. El resultado es claro: la ciudad no ha dejado de expandirse, y los incendios están golpeando directamente la biodiversidad. En medio de este escenario, la Reserva de la Biosfera La Campana–Peñuelas aparece como una pieza clave para avanzar hacia la sustentabilidad. La mayor amenaza, en cambio, es dejar que el mercado decida por sí solo cómo se usa el territorio.",
+      "duracion": 55
+    }
+  },
+  {
+    "ID": "29",
+    "DOI": "https://doi.org/10.1016/j.cosust.2025.101590",
+    "Autor": "Andrés Moreira-Muñoz, Valeria S. Duval, Marcelo Leguia-Cruz, Valéria Raquel Porto de Lima, Katalina Salvador, Pablo Mansilla-Quiñones",
+    "Año": 2025,
+    "Tipo": "Comentario",
+    "Titulo": {
+      "en": "Eco-social peace and multispecies justice in UNESCO Biosphere Reserves: a convivial and decolonial post-growth conservation approach",
+      "es": "Paz ecosocial y justicia multiespecie en las Reservas de la Biosfera de la UNESCO: una conservación convivencial, decolonial y post-crecimiento"
+    },
+    "Divulgacion": "Las Reservas de la Biosfera cumplen 50 años. Este comentario propone repensarlas desde América Latina, con más justicia para las personas y para las demás especies.",
+    "Image": "assets/img/publicaciones/29.webp",
+    "Extracto": {
+      "en": "Multiple contemporary socio-ecological crises demand urgent rethinking of regimes governing nature–culture relations. The World Network of Biosphere Reserves (WNBR), now in its fiftieth year, was established to apply sustainability principles worldwide. At the occurrence of the Fifth UNESCO World Congress on Biosphere Reserves in Hangzhou in September 2025, it is timely to revisit the conceptual foundations of the WNBR and their practical application. By cross-referencing UNESCO principles with emerging decolonial, convivial, and post-growth conservation approaches — including the philosophies of Buen Vivir and Buen Convivir — Biosphere Reserves can be reimagined as critical sites for cultivating balanced nature–culture relationships grounded in eco-social peace and multispecies justice. This commentary draws on Latin American experiences to highlight both the contradictions of extractivist development and the potential for reconstructing communal life through education, interculturality, and multispecies coexistence.",
+      "es": "Las múltiples crisis socioecológicas contemporáneas exigen repensar con urgencia los regímenes que gobiernan las relaciones entre naturaleza y cultura. La Red Mundial de Reservas de la Biosfera, que cumple cincuenta años, fue creada para aplicar principios de sustentabilidad en todo el mundo. Con ocasión del Quinto Congreso Mundial de Reservas de la Biosfera de la UNESCO, en Hangzhou en septiembre de 2025, es oportuno revisar los fundamentos conceptuales de la red y su aplicación práctica. Al cruzar los principios de la UNESCO con enfoques emergentes de conservación decolonial, convivencial y post-crecimiento —incluidas las filosofías del Buen Vivir y el Buen Convivir—, las Reservas de la Biosfera pueden reimaginarse como espacios clave para cultivar relaciones equilibradas entre naturaleza y cultura, basadas en la paz ecosocial y la justicia multiespecie. Este comentario se apoya en experiencias latinoamericanas para mostrar tanto las contradicciones del desarrollo extractivista como el potencial de reconstruir la vida comunitaria mediante la educación, la interculturalidad y la convivencia multiespecie."
+    },
+    "Audio": {
+      "src": "assets/audio/29.mp3",
+      "voz": "Marcelo Leguía",
+      "genero": "m",
+      "sintetica": true,
+      "transcripcion": "La red mundial de Reservas de la Biosfera de la UNESCO cumple cincuenta años. Este comentario, liderado por Andrés Moreira-Muñoz, aprovecha ese momento para preguntarse qué deberían ser hoy estos territorios. Proponemos mirarlos desde América Latina, cruzando los principios de la UNESCO con ideas como el Buen Vivir y el Buen Convivir. La idea es que las reservas no sean solo áreas protegidas, sino lugares donde se construya una paz ecosocial: una relación más justa entre las personas, y también con las demás especies con las que compartimos el territorio. Para eso, la educación, el diálogo entre culturas y la vida comunitaria son fundamentales, frente a un modelo de desarrollo basado en la extracción.",
+      "duracion": 43
+    }
   }
 ]
