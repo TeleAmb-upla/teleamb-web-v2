@@ -529,7 +529,7 @@
     if (!el) return;
     try {
       const list = await getJSON("plataformas");
-      document.querySelectorAll("[data-platforms-count]").forEach((c) => (c.textContent = String(list.length).padStart(2, "0")));
+      document.querySelectorAll("[data-platforms-count]").forEach((c) => (c.textContent = String(list.length)));
 
       if (el.dataset.platforms === "showcase") {
         initShowcase(el, list);

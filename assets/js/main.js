@@ -166,29 +166,4 @@
       el.appendChild(s);
     }
   });
-
-  // ---------- Cursor tipo retícula ----------
-  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !reduceMotion) {
-    const cursor = document.createElement("div");
-    cursor.className = "cursor";
-    cursor.setAttribute("aria-hidden", "true");
-    document.body.appendChild(cursor);
-    let x = 0, y = 0, cx = 0, cy = 0;
-    window.addEventListener("pointermove", (e) => {
-      x = e.clientX;
-      y = e.clientY;
-      cursor.classList.add("is-active");
-    });
-    document.addEventListener("pointerleave", () => cursor.classList.remove("is-active"));
-    document.addEventListener("pointerover", (e) => {
-      cursor.classList.toggle("is-hover", !!e.target.closest("a, button, [data-cursor]"));
-    });
-    const follow = () => {
-      cx += (x - cx) * 0.2;
-      cy += (y - cy) * 0.2;
-      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      requestAnimationFrame(follow);
-    };
-    follow();
-  }
 })();

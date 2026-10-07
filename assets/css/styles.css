@@ -112,19 +112,20 @@
 /* Costuras de píxeles entre secciones (ver seams.js) */
 .seam {
   position: relative;
-  height: clamp(56px, 7vw, 98px);
+  height: clamp(110px, 12vw, 180px);
   overflow: hidden;
   line-height: 0;
 }
 
 .seam--soft {
-  height: 28px;
+  height: 42px;
 }
 
 .seam canvas {
   position: absolute;
   top: 0;
   left: 0;
+  image-rendering: pixelated;
 }
 
 *,
@@ -3503,5 +3504,189 @@ h4 {
 
   .marquee__track {
     animation: none;
+  }
+}
+
+/* ---------- Portada: nombre del laboratorio ---------- */
+
+.display {
+  font-size: clamp(3.2rem, 9vw, 8.5rem);
+}
+
+.h2 {
+  font-size: clamp(2.3rem, 5.4vw, 4.6rem);
+  text-wrap: balance;
+}
+
+.hero__kicker {
+  margin: 0 0 18px;
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.hero__name {
+  font-size: clamp(5rem, 17vw, 15rem);
+  line-height: 0.85;
+  letter-spacing: -0.055em;
+}
+
+.hero__name .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.04em;
+}
+
+.hero__name .line > span {
+  display: inline-block;
+  transform: translateY(105%);
+  animation: rise 1.2s var(--ease) forwards;
+}
+
+.hero__name b {
+  font-weight: 500;
+  color: var(--sand);
+}
+
+.hero__full {
+  display: block;
+  margin-top: 18px;
+  font-size: clamp(1.5rem, 3.2vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.hero__bottom {
+  margin-top: 34px;
+}
+
+.hero__proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 34px;
+  margin: 44px 0 0;
+  padding: 22px 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.hero__proof b {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Hallazgo destacado ---------- */
+
+.feature__grid {
+  grid-template-columns: 1.35fr 1fr;
+}
+
+.feature .h2 {
+  font-size: clamp(2.1rem, 4.2vw, 3.7rem);
+  margin-bottom: 24px;
+}
+
+.feature__body p {
+  font-size: 1.08rem;
+}
+
+.feature__stats {
+  grid-template-columns: 1fr;
+}
+
+.stat {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 26px;
+}
+
+.stat__label {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .feature__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Quiénes somos ---------- */
+
+.about-grid {
+  align-items: center;
+}
+
+.about-grid__text {
+  margin: 26px 0 40px;
+  max-width: 58ch;
+  font-size: 1.08rem;
+  color: var(--text-2);
+}
+
+.team-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.team-grid--2 .member__photo {
+  aspect-ratio: 1 / 1;
+}
+
+.field-photo {
+  margin: 0;
+}
+
+/* Instituciones bajo el llamado final */
+.partners--inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 48px;
+  margin-top: 40px;
+  border: 0;
+  border-radius: 0;
+}
+
+.partners--inline .partner {
+  flex-direction: row;
+  min-height: 0;
+  padding: 0;
+  gap: 14px;
+  background: none;
+}
+
+.partners--inline .partner + .partner {
+  border: 0;
+}
+
+.partners--inline .partner__logo {
+  height: 56px;
+  padding: 8px 12px;
+}
+
+.partners--inline .partner__logo img {
+  max-height: 40px;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__proof {
+    gap: 8px 22px;
+    font-size: 0.85rem;
+  }
+
+  .team-grid--2 {
+    gap: 14px;
   }
 }
