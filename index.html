@@ -55,12 +55,10 @@
   <main id="contenido">
     <!-- ===================== HERO ===================== -->
     <section class="hero" aria-label="Presentación">
-      <canvas class="hero__canvas" data-terrain aria-hidden="true"></canvas>
-
       <div class="container hero__content">
-        <p class="hero__kicker fade-in">Universidad de Playa Ancha · Valparaíso, Chile</p>
+        <p class="hero__kicker fade-in"><span class="hero__palette" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>Universidad de Playa Ancha · Valparaíso, Chile</p>
         <h1 class="hero__name">
-          <span class="line"><span>Tele<b>Amb</b></span></span>
+          <span class="line"><span><em class="hero__tele">Tele</em><b>Amb</b></span></span>
           <span class="hero__full">Laboratorio de Teledetección<br>y Monitoreo Ambiental</span>
         </h1>
         <div class="hero__bottom fade-in">
@@ -82,6 +80,33 @@
     </section>
 
     <div class="seam" data-seam="night paper" aria-hidden="true"></div>
+    <!-- ===================== COLABORADORES ===================== -->
+    <section class="allies" aria-labelledby="allies-title">
+      <div class="container allies__head">
+        <h2 class="allies__title" id="allies-title">Colaboramos con</h2>
+        <p>Servicios públicos, municipios, centros de investigación y universidades de Chile, Argentina, Estados Unidos y Francia.</p>
+      </div>
+      <div class="allies__viewport">
+        <ul class="allies__track" data-allies>
+          <li class="ally ally--sq"><img src="assets/img/colaboradores/dga.webp" alt="Dirección General de Aguas, Ministerio de Obras Públicas" title="Dirección General de Aguas" loading="lazy"></li>
+          <li class="ally ally--sq"><img src="assets/img/colaboradores/seremi-agricultura.svg" alt="Seremi de Agricultura, Región de Valparaíso" title="Seremi de Agricultura · Región de Valparaíso" loading="lazy"></li>
+          <li class="ally ally--sq"><img src="assets/img/colaboradores/quilpue.webp" alt="Municipalidad de Quilpué" title="Municipalidad de Quilpué" loading="lazy"></li>
+          <li class="ally ally--wide"><img src="assets/img/colaboradores/cmm.svg" alt="Centro de Modelamiento Matemático" title="Centro de Modelamiento Matemático" loading="lazy"></li>
+          <li class="ally ally--sq"><img src="assets/img/colaboradores/ceaza.svg" alt="CEAZA, Centro de Estudios Avanzados en Zonas Áridas" title="CEAZA · Centro de Estudios Avanzados en Zonas Áridas" loading="lazy"></li>
+          <li class="ally"><img src="assets/img/colaboradores/ciep.webp" alt="CIEP, Centro de Investigación en Ecosistemas de la Patagonia" title="CIEP · Centro de Investigación en Ecosistemas de la Patagonia" loading="lazy"></li>
+          <li class="ally ally--wide"><img src="assets/img/colaboradores/ianigla.webp" alt="IANIGLA, CONICET, Argentina" title="IANIGLA · CONICET, Argentina" loading="lazy"></li>
+          <li class="ally"><img src="assets/img/colaboradores/uchile.webp" alt="Universidad de Chile" title="Universidad de Chile" loading="lazy"></li>
+          <li class="ally ally--wide"><img src="assets/img/colaboradores/uc.svg" alt="Pontificia Universidad Católica de Chile" title="Pontificia Universidad Católica de Chile" loading="lazy"></li>
+          <li class="ally ally--tall"><img src="assets/img/colaboradores/pucv.webp" alt="Pontificia Universidad Católica de Valparaíso" title="Pontificia Universidad Católica de Valparaíso" loading="lazy"></li>
+          <li class="ally ally--wide"><img src="assets/img/colaboradores/udec.svg" alt="Universidad de Concepción" title="Universidad de Concepción" loading="lazy"></li>
+          <li class="ally ally--xwide"><img src="assets/img/colaboradores/udd.svg" alt="Universidad del Desarrollo" title="Universidad del Desarrollo" loading="lazy"></li>
+          <li class="ally ally--xwide"><img src="assets/img/colaboradores/umayor.webp" alt="Universidad Mayor" title="Universidad Mayor" loading="lazy"></li>
+          <li class="ally"><img src="assets/img/colaboradores/csu.svg" alt="Colorado State University" title="Colorado State University" loading="lazy"></li>
+          <li class="ally"><img src="assets/img/colaboradores/uga.svg" alt="Université Grenoble Alpes" title="Université Grenoble Alpes" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
     <!-- ===================== PARA QUIÉN ===================== -->
     <section class="section section--tight" id="para-quien">
       <div class="container">
@@ -450,7 +475,6 @@
 
   <script src="assets/js/seams.js" defer></script>
   <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/terrain.js" defer></script>
   <script src="assets/js/spectral.js" defer></script>
   <script src="assets/js/data.js" defer></script>
 </body>

@@ -166,4 +166,15 @@
       el.appendChild(s);
     }
   });
+
+  // ---------- Colaboradores: la fila se duplica para que el desplazamiento sea continuo ----------
+  const allies = document.querySelector("[data-allies]");
+  if (allies && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    [...allies.children].forEach((li) => {
+      const copy = li.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      allies.appendChild(copy);
+    });
+    allies.classList.add("is-moving");
+  }
 })();

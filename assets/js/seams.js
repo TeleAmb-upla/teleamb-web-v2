@@ -47,7 +47,7 @@
       const w = el.clientWidth, h = el.clientHeight;
       if (!w || w === lastW) return;
       lastW = w;
-      const s = w < 640 ? 6 : 9;
+      const s = w < 640 ? 8 : 12;
       const cols = Math.ceil(w / s), rows = Math.max(2, Math.ceil(h / s));
       canvas.width = cols;
       canvas.height = rows;
