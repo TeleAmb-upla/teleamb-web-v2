@@ -312,7 +312,8 @@
 
       const search = document.querySelector("[data-pubs-search]");
       const filters = document.querySelector("[data-pubs-filters]");
-      const topics = ["Todas", ...new Set(all.map(pubTopic)), "Con audio"];
+      const topics = ["Todas", ...new Set(all.map(pubTopic))];
+      if (all.some((p) => !p.Audio)) topics.push("Con audio");
       let topic = "Todas";
 
       filters.innerHTML = topics
