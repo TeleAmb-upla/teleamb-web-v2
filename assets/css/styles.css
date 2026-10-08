@@ -3929,8 +3929,17 @@ h4 {
 .ally--tall img { height: 54px; }
 .ally--wide img { height: 34px; }
 .ally--xwide img { height: 26px; }
+.ally--light img { filter: grayscale(1) brightness(0.55) contrast(1.4); }
 
-.ally:hover img {
+.ally a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.ally:hover img,
+.ally a:focus-visible img {
   filter: none;
   opacity: 1;
 }

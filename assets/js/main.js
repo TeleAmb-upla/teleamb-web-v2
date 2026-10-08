@@ -174,6 +174,7 @@
     [...allies.children].forEach((li) => {
       const copy = li.cloneNode(true);
       copy.setAttribute("aria-hidden", "true");
+      copy.querySelectorAll("a").forEach((a) => a.setAttribute("tabindex", "-1"));
       allies.appendChild(copy);
     });
     allies.classList.add("is-moving");
