@@ -3,6 +3,7 @@
  * Para actualizar contenidos basta con editar esos archivos.
  */
 (function () {
+  const IG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
   const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
 
   const LAB_AUTHORS = /(Freddy(\s+A\.|\s+Alejandro)?\s+Saavedra(\s+Pimentel)?|F\.\s*Saavedra|Marcelo\s+Legu[ií]a([\s-]Cruz)?|Ana\s+Hern[aá]ndez([\s-]Duarte)?|Hern[aá]ndez-Duarte|Carlos(\s+Eduardo)?\s+Romero|Valentina(\s+Ignacia)?\s+Contreras(\s+Figueroa)?|Javier\s+Medina(\s+Mendoza)?|Pablo\s+Arancibia|Yael\s+Aguirre|Daniela\s+Gonz[aá]lez)/g;
@@ -47,7 +48,7 @@
     if (/incendio/.test(t)) return "Incendios";
     if (/océano|oceano/.test(t)) return "Océanos";
     if (/ciudad|urban|quilpué/.test(t)) return "Ciudades";
-    if (/curso|capacitación|seminario/.test(t)) return "Formación";
+    if (/curso|capacitación|seminario|taller|docente/.test(t)) return "Formación";
     if (/dron/.test(t)) return "Drones";
     if (/congreso/.test(t)) return "Congresos";
     return "Laboratorio";
@@ -102,6 +103,7 @@
         <div class="news-card__meta"><span class="tag"${toneAttr(topicOf(n))}>${esc(t(topicOf(n)))}</span><time datetime="${esc(n.fecha)}">${fmtDate(n.fecha)}</time></div>
         <h3>${esc(L(n, "titulo"))}</h3>
         <p>${esc(L(n, "subtitulo"))}</p>
+        ${n.fuente === "instagram" ? `<span class="news-card__src">${IG} Instagram · @${esc(n.cuenta)}</span>` : ""}
       </a>`;
   }
 
@@ -135,8 +137,11 @@
             (topic === "Todas" || topicOf(n) === topic) &&
             (!q || [n.titulo, n.subtitulo, n.titulo_en, n.subtitulo_en].join(" ").toLowerCase().includes(q))
         );
+        const featured = !q && topic === "Todas";
+        const lead = featured ? list.findIndex((n) => n.destacada) : -1;
+        if (lead > 0) list.unshift(list.splice(lead, 1)[0]);
         el.innerHTML = list.length ? list.slice(0, shown).map(newsCard).join("") : `<p class="empty">${t("Sin resultados.")}</p>`;
-        el.classList.toggle("news-grid--featured", !q && topic === "Todas");
+        el.classList.toggle("news-grid--featured", featured);
         more.hidden = list.length <= shown;
         done(el);
       };

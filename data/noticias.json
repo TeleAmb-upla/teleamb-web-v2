@@ -1,5 +1,94 @@
 [
   {
+    "url": "https://www.instagram.com/reel/DdO5_amRb3r/",
+    "imagen": "assets/img/noticias/ig_entrevista_ana.webp",
+    "fecha": "2026-09-13",
+    "fuente": "instagram",
+    "cuenta": "geoupla",
+    "titulo": "Ana Hernández habla de infraestructura verde en «Valparaíso Región Sostenible»",
+    "titulo_en": "Ana Hernández discusses green infrastructure on «Valparaíso Región Sostenible»",
+    "subtitulo": "La académica participó en el capítulo 87 del programa de SoyChile TV, donde explicó por qué la infraestructura verde es clave para las ciudades de la Región de Valparaíso.",
+    "subtitulo_en": "The researcher appeared on episode 87 of the SoyChile TV programme, explaining why green infrastructure is key for the cities of the Valparaíso Region."
+  },
+  {
+    "url": "https://www.instagram.com/p/DcjrwQQFOyz/",
+    "imagen": "assets/img/noticias/ig_fic_riego.webp",
+    "fecha": "2026-08-27",
+    "fuente": "instagram",
+    "cuenta": "teleamb_upla",
+    "titulo": "En terreno con la plataforma de monitoreo satelital agrícola",
+    "titulo_en": "In the field with the agricultural satellite monitoring platform",
+    "subtitulo": "Con drones levantamos datos en las principales provincias agrícolas de la región para una plataforma que entregará alertas tempranas y ayudará a optimizar el riego. Proyecto FIC-R del Gobierno Regional de Valparaíso.",
+    "subtitulo_en": "Using drones, we collected data across the region's main farming provinces for a platform that will issue early warnings and help optimise irrigation. A FIC-R project funded by the Valparaíso Regional Government."
+  },
+  {
+    "url": "https://www.instagram.com/reel/DcRt8urtTMf/",
+    "imagen": "assets/img/noticias/observatorio_nieves_2024.webp",
+    "destacada": true,
+    "fecha": "2026-08-20",
+    "fuente": "instagram",
+    "cuenta": "teleamb_upla",
+    "titulo": "46 cuencas monitoreadas desde el espacio: cierra el proyecto del Observatorio de Nieves",
+    "titulo_en": "46 watersheds monitored from space: the Snow Observatory project wraps up",
+    "subtitulo": "El seminario de cierre, con más de 50 asistentes y la participación de Steven Fassnacht (Colorado State University), presentó una plataforma que estima cada mes el agua almacenada en la nieve con MODIS, Sentinel, VIIRS y Landsat.",
+    "subtitulo_en": "The closing seminar, with more than 50 attendees and Steven Fassnacht (Colorado State University), presented a platform that estimates the water stored in snow every month using MODIS, Sentinel, VIIRS and Landsat."
+  },
+  {
+    "url": "https://www.instagram.com/p/DcBxnwaFnFO/",
+    "imagen": "assets/img/noticias/ig_nevada_portillo.webp",
+    "fecha": "2026-08-14",
+    "fuente": "instagram",
+    "cuenta": "yaviermedinam",
+    "titulo": "La nevada de julio en Portillo: dos metros en menos de una semana",
+    "titulo_en": "July's snowfall in Portillo: two metres in less than a week",
+    "subtitulo": "En un año normal la máxima acumulación semanal ronda los 70 cm; este año llegó a cerca de 210 cm, y la anomalía se repitió en cuatro estaciones de la zona central. Lo raro no fue la cantidad, sino la rapidez. Datos de la DGA.",
+    "subtitulo_en": "In a normal year the largest weekly accumulation is around 70 cm; this year it reached about 210 cm, and the anomaly showed up at four stations across central Chile. What was unusual was not the amount but the speed. Data from the DGA."
+  },
+  {
+    "url": "https://www.instagram.com/reel/DbtmwpxjNZt/",
+    "imagen": "assets/img/noticias/ig_plataforma_nieve.webp",
+    "fecha": "2026-08-06",
+    "fuente": "instagram",
+    "cuenta": "upla_comunica",
+    "titulo": "UPLA presenta una plataforma pública para monitorear las reservas de nieve del país",
+    "titulo_en": "UPLA launches a public platform to monitor the country's snow reserves",
+    "subtitulo": "El Observatorio Satelital de Nieves revisa datos desde el año 2000, con detalle de hasta 10 metros, y actualiza cada mes la cobertura de nieve y su equivalente en agua en 46 cuencas. Los datos son abiertos.",
+    "subtitulo_en": "The Satellite Snow Observatory draws on data back to 2000, with detail down to 10 metres, and updates snow cover and its water equivalent every month for 46 watersheds. The data are open."
+  },
+  {
+    "url": "https://www.instagram.com/reel/Da6OdzrCCxl/",
+    "imagen": "assets/img/noticias/ig_colegio_quillota.webp",
+    "fecha": "2026-07-17",
+    "fuente": "instagram",
+    "cuenta": "aconcaguavivo",
+    "titulo": "Aconcagua Vivo visita el Colegio Precursor Francisco de Miranda, en Quillota",
+    "titulo_en": "Aconcagua Vivo visits Colegio Precursor Francisco de Miranda in Quillota",
+    "subtitulo": "Una charla y un taller práctico para valorar y proteger la biodiversidad de la cuenca del Aconcagua. Proyecto financiado por el FNDR 8 % del Gobierno Regional de Valparaíso.",
+    "subtitulo_en": "A talk and a hands-on workshop on valuing and protecting biodiversity in the Aconcagua basin. Funded by the Valparaíso Regional Government's FNDR 8% fund."
+  },
+  {
+    "url": "https://www.instagram.com/p/DagX9xdikAw/",
+    "imagen": "assets/img/noticias/ig_docentes_aconcagua.webp",
+    "fecha": "2026-07-07",
+    "fuente": "instagram",
+    "cuenta": "aconcaguavivo",
+    "titulo": "Programa de fortalecimiento docente en geografía, medio ambiente y tecnologías",
+    "titulo_en": "Teacher development programme in geography, environment and technology",
+    "subtitulo": "Una capacitación en línea de tres sesiones para docentes: diagnóstico del entorno, teledetección para monitorear el medio ambiente y uso de GeoApps en terreno.",
+    "subtitulo_en": "A three-session online training for teachers: assessing the local environment, remote sensing for environmental monitoring and using GeoApps in the field."
+  },
+  {
+    "url": "https://www.instagram.com/reel/DaEBwwVt4Ww/",
+    "imagen": "assets/img/noticias/ig_taller_drones.webp",
+    "fecha": "2026-06-26",
+    "fuente": "instagram",
+    "cuenta": "teleamb_upla",
+    "titulo": "Taller de drones para funcionarios municipales",
+    "titulo_en": "Drone workshop for municipal staff",
+    "subtitulo": "En el proyecto Aconcagua Vivo, funcionarios municipales aprendieron a operar drones y exploraron sus usos para la gestión del territorio. Financiado por el FNDR 8 % del Gobierno Regional de Valparaíso.",
+    "subtitulo_en": "Through the Aconcagua Vivo project, municipal staff learned to fly drones and explored how to use them in land management. Funded by the Valparaíso Regional Government's FNDR 8% fund."
+  },
+  {
     "url": "https://www.upla.cl/noticias/2025/05/13/investigadores-de-teleamb-upla-instalan-tecnologia-clave-en-cerro-castillo-para-monitorear-la-nieve-y-clima/",
     "imagen": "assets/img/noticias/cerro_castillo.webp",
     "fecha": "2025-04-24",

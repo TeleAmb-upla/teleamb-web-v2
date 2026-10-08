@@ -21,7 +21,7 @@ Luego abrir <http://localhost:8000>.
 | Equipo         | `data/equipo.json`        | `assets/img/team/`          |
 | Plataformas    | `data/plataformas.json`   | `assets/img/plataformas/`   |
 
-Las noticias se ordenan por fecha automáticamente y su categoría (Nieve, Incendios, Ciudades…) se deduce del título. En el equipo, `grupo` puede ser `direccion`, `investigacion` o `comunicaciones`.
+Las noticias se ordenan por fecha automáticamente y su categoría (Nieve, Incendios, Ciudades…) se deduce del título. Las que vienen de Instagram llevan `"fuente": "instagram"` y `"cuenta"` (la cuenta que publicó, sin @), y la tarjeta lo indica. La noticia con `"destacada": true` ocupa la tarjeta grande en la página de noticias; conviene que tenga una imagen horizontal de buena resolución. En el equipo, `grupo` puede ser `direccion`, `investigacion` o `comunicaciones`.
 
 ## Inglés
 

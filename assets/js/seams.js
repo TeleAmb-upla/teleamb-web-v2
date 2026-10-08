@@ -4,8 +4,9 @@
  * tramado ordenado (Bayer 4x4), así el paso entre colores se ve suave y fluido.
  *
  * Uso: <div class="seam" data-seam="paper night" aria-hidden="true"></div>
- *      (color de arriba, color de abajo). Con la clase seam--soft la
- *      transición es corta, para pasar entre dos fondos claros.
+ *      (color de arriba, color de abajo). Con la clase seam--soft, para pasar
+ *      entre dos fondos claros, el paso es un degradado liso cruzado por
+ *      curvas de nivel, como en una carta topográfica.
  */
 (function () {
   const BASE = { paper: "#eef2ef", sky: "#e2edf1", white: "#f8faf9", night: "#04090f" };
@@ -17,19 +18,48 @@
   const isDark = (rgb) => rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11 < 90;
 
   // Rampa de colores interpolada en `steps` tonos.
-  function ramp(top, bottom, soft) {
-    let stops;
-    if (soft) stops = [top, lerp(lerp(top, bottom, 0.5), toRGB("#a8dcdc"), 0.35), bottom];
-    else {
-      const mid = LIGHT_TO_DARK.map(toRGB);
-      stops = [top, ...(isDark(top) ? mid.reverse() : mid), bottom];
-    }
-    const steps = soft ? 7 : 22;
+  function ramp(top, bottom) {
+    const mid = LIGHT_TO_DARK.map(toRGB);
+    const stops = [top, ...(isDark(top) ? mid.reverse() : mid), bottom];
+    const steps = 22;
     return Array.from({ length: steps }, (_, k) => {
       const x = (k / (steps - 1)) * (stops.length - 1);
       const i = Math.min(stops.length - 2, Math.floor(x));
       return lerp(stops[i], stops[i + 1], x - i).map(Math.round);
     });
+  }
+
+  const css = (rgb) => `rgb(${rgb.map(Math.round).join(",")})`;
+
+  // Curvas de nivel: todas siguen el mismo relieve, con separación variable.
+  function contours(el, canvas, ctx, top, bottom, phase) {
+    const w = el.clientWidth, h = el.clientHeight, dpr = Math.min(2, window.devicePixelRatio || 1);
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, css(top));
+    g.addColorStop(1, css(bottom));
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, w, h);
+
+    const relief = (x) => Math.sin(x * 0.0042 + phase) * 0.55 + Math.sin(x * 0.011 + phase * 1.9) * 0.3 + Math.sin(x * 0.027 + phase * 3.1) * 0.15;
+    const n = 5;
+    for (let k = 0; k < n; k++) {
+      const base = (h * (k + 1)) / (n + 1);
+      const amp = h * 0.16 * (1 - Math.abs(k - (n - 1) / 2) / n);
+      ctx.beginPath();
+      for (let x = -4; x <= w + 4; x += 4) {
+        const y = base + amp * relief(x) + h * 0.03 * Math.sin(x * 0.006 + k * 1.3 + phase);
+        x < 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      const index = k === 2;
+      ctx.strokeStyle = index ? "rgba(46, 140, 122, 0.42)" : "rgba(11, 60, 93, 0.16)";
+      ctx.lineWidth = index ? 1.3 : 0.9;
+      ctx.stroke();
+    }
   }
 
   function setup(el, seed) {
@@ -39,7 +69,7 @@
     const [topName, bottomName] = el.dataset.seam.split(/\s+/);
     const top = toRGB(BASE[topName] || topName), bottom = toRGB(BASE[bottomName] || bottomName);
     const soft = el.classList.contains("seam--soft");
-    const colors = ramp(top, bottom, soft);
+    const colors = soft ? null : ramp(top, bottom);
     const phase = (seed % 628) / 100;
     let lastW = 0;
 
@@ -47,6 +77,7 @@
       const w = el.clientWidth, h = el.clientHeight;
       if (!w || w === lastW) return;
       lastW = w;
+      if (soft) return contours(el, canvas, ctx, top, bottom, phase);
       const s = w < 640 ? 8 : 12;
       const cols = Math.ceil(w / s), rows = Math.max(2, Math.ceil(h / s));
       canvas.width = cols;
