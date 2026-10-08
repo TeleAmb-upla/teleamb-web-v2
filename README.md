@@ -28,6 +28,7 @@ Las noticias se ordenan por fecha automáticamente y su categoría (Nieve, Incen
 El botón ES / EN de la cabecera cambia el idioma y la elección se recuerda entre páginas (también funciona `?lang=en` en la URL).
 
 - **Datos:** cada texto tiene su versión en inglés en un campo con sufijo `_en` (`titulo_en`, `subtitulo_en`, `descripcion_en`, `bio_en`, `Divulgacion_en`, `Audio.transcripcion_en`). Las publicaciones usan `Titulo.en` y `Extracto.en`. Si falta el campo `_en`, se muestra el español.
+- **Audios:** cada resumen tiene versión en inglés en `assets/audio/en/<ID>.mp3` (`Audio.src_en`, `Audio.duracion_en`). Con el sitio en inglés suena ese audio; si no existe, suena el español. `python tools/audio_resumenes.py` genera los que falten en ambos idiomas a partir de `transcripcion` y `transcripcion_en`.
 - **Páginas:** los textos fijos del HTML se traducen con `assets/js/i18n-en.js`. La clave es el texto en español tal como está en el HTML; si se edita un texto en el HTML, hay que actualizar su clave en ese archivo o quedará en español.
 
 ## Imágenes

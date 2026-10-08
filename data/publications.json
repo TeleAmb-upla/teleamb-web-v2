@@ -23,7 +23,9 @@
       "sintetica": true,
       "transcripcion": "Los Andes recorren casi todo el continente, y la nieve no se comporta igual en Perú que en Chile central. En este trabajo quisimos ordenar esa diversidad. Usamos imágenes del satélite MODIS, que cada ocho días muestra dónde hay nieve, y estudiamos la cordillera entre los 8 y los 39 grados sur. Así dividimos los Andes en regiones con comportamientos parecidos. En los trópicos, la nieve solo aparece sobre los cinco mil metros, y lo que manda es la temperatura. Más al sur, la línea de nieve va bajando a medida que avanzamos hacia el polo, y la nieve alcanza su máximo en invierno. Entre los 28 y 37 grados sur, las montañas más altas atrapan la humedad y generan una gran diferencia entre las dos vertientes de la cordillera. Ahí se concentran las zonas de nieve estacional y permanente, justamente donde vive gran parte de la población que depende de esa agua. Este mapa sirvió como punto de partida para muchos trabajos posteriores.",
       "transcripcion_en": "The Andes run along almost the entire continent, and snow does not behave the same way in Peru as it does in central Chile. In this work we set out to bring order to that diversity. We used imagery from the MODIS satellite, which shows where there is snow every eight days, and studied the range between 8 and 39 degrees south. That allowed us to divide the Andes into regions with similar behaviour. In the tropics, snow only appears above five thousand metres, and temperature is what controls it. Further south, the snow line drops as we move toward the pole, and snow peaks in winter. Between 28 and 37 degrees south, the highest mountains trap moisture and create a big difference between the two sides of the range. That is where seasonal and permanent snow zones are concentrated, precisely where much of the population that depends on that water lives. This map became the starting point for many later studies.",
-      "duracion": 59
+      "duracion": 59,
+      "src_en": "assets/audio/en/2.mp3",
+      "duracion_en": 59
     }
   },
   {
@@ -50,7 +52,9 @@
       "sintetica": true,
       "transcripcion": "Este estudio, liderado por Kelly Jones, se hizo en Colorado, Estados Unidos, y responde una pregunta muy práctica: ¿conviene invertir en prevenir incendios para proteger el agua potable? Cuando un bosque se quema de forma extrema y luego llueve fuerte, el suelo desnudo se erosiona y los sedimentos terminan en los embalses. Sacarlos cuesta mucho dinero. Simulamos distintos niveles de manejo del combustible vegetal en la cuenca que abastece al embalse de Strontia Springs, cerca de Denver, y probamos dos estrategias: tratar las zonas prioritarias según un mapa de riesgo, o simplemente las más accesibles. El resultado fue que, después de grandes tormentas, invertir en las zonas prioritarias se paga solo, por el ahorro en limpieza del embalse. Eso sí, pasado el cincuenta u ochenta por ciento del bosque tratado, cada dólar adicional rinde menos. Y eso considerando solo la erosión: los beneficios reales probablemente son mayores.",
       "transcripcion_en": "This study, led by Kelly Jones, was carried out in Colorado, in the United States, and answers a very practical question: is it worth investing in wildfire prevention to protect drinking water? When a forest burns severely and heavy rain follows, the bare soil erodes and the sediment ends up in reservoirs. Removing it is very expensive. We simulated different levels of fuel treatment in the watershed that feeds Strontia Springs Reservoir, near Denver, and tested two strategies: treating priority areas according to a risk map, or simply the most accessible ones. The result was that, after large storms, investing in priority areas pays for itself through savings in reservoir cleanup. That said, once fifty to eighty percent of the forest has been treated, each additional dollar returns less. And that is counting erosion alone: the real benefits are probably larger.",
-      "duracion": 58
+      "duracion": 58,
+      "src_en": "assets/audio/en/3.mp3",
+      "duracion_en": 58
     }
   },
   {
@@ -77,7 +81,9 @@
       "sintetica": true,
       "transcripcion": "Los Andes miden unos siete mil kilómetros, y en gran parte de la cordillera casi no hay estaciones meteorológicas. Por eso usamos satélites. Con imágenes MODIS entre 2000 y 2016 calculamos, para cada año, qué fracción del tiempo hubo nieve en cada lugar. A eso le llamamos persistencia de la nieve. Al norte de los 29 grados sur hay poca nieve y casi no vimos cambios. Pero entre los 29 y 36 grados sur, en una superficie de más de treinta y cuatro mil kilómetros cuadrados, la nieve está durando entre dos y cinco días menos cada año. La pérdida fue mayor en la vertiente oriental, del lado argentino. Además, la línea de nieve subió entre diez y treinta metros por año. Estos cambios se relacionan con menos precipitación y más temperatura. Y vimos que El Niño explica mejor lo que pasa al norte de los 31 grados, mientras que más al sur pesa más otro patrón climático: el Modo Anular del Sur.",
       "transcripcion_en": "The Andes stretch for about seven thousand kilometres, and across much of the range there are almost no weather stations. That is why we use satellites. With MODIS imagery from 2000 to 2016 we calculated, for each year, what fraction of the time each place had snow. We call that snow persistence. North of 29 degrees south there is little snow and we saw almost no change. But between 29 and 36 degrees south, over an area of more than thirty-four thousand square kilometres, snow is lasting between two and five fewer days each year. The loss was greater on the eastern, Argentine side. In addition, the snow line rose between ten and thirty metres per year. These changes are linked to less precipitation and higher temperatures. We also found that El Niño best explains what happens north of 31 degrees, while further south another climate pattern carries more weight: the Southern Annular Mode.",
-      "duracion": 60
+      "duracion": 60,
+      "src_en": "assets/audio/en/4.mp3",
+      "duracion_en": 60
     }
   },
   {
@@ -104,7 +110,9 @@
       "sintetica": true,
       "transcripcion": "Este trabajo lo lideró John Hammond, y lo hicimos en el oeste de Estados Unidos, una región con climas muy distintos. La pregunta era: ¿podemos estimar cuánta agua llevará un río mirando desde el satélite cuánto tiempo dura la nieve en su cuenca? Comparamos la duración de la nieve observada con MODIS con medidas más tradicionales, como la cantidad de agua almacenada en la nieve, en ciento diecinueve cuencas de referencia. Todas las medidas se parecen, pero cambian según el clima. En las cuencas secas y frías, la duración de la nieve se relaciona muy bien con el caudal anual, tanto de una cuenca a otra como de un año a otro. Al aplicarlo a la parte alta del río Colorado, vimos que la mitad del agua viene de zonas sobre los tres mil metros. Esto abre una puerta interesante: estimar el caudal en ríos donde no hay estaciones de medición.",
       "transcripcion_en": "This work was led by John Hammond, and we carried it out in the western United States, a region with very different climates. The question was: can we estimate how much water a river will carry by looking, from a satellite, at how long snow lasts in its watershed? We compared the snow duration observed with MODIS against more traditional measures, such as the amount of water stored in the snowpack, in one hundred and nineteen reference watersheds. All the measures are similar, but they change with climate. In dry, cold watersheds, snow duration relates very well to annual streamflow, both from one watershed to another and from one year to the next. Applying it to the upper Colorado River, we found that half of the water comes from areas above three thousand metres. This opens an interesting door: estimating streamflow in rivers that have no gauging stations.",
-      "duracion": 51
+      "duracion": 51,
+      "src_en": "assets/audio/en/5.mp3",
+      "duracion_en": 55
     }
   },
   {
@@ -131,7 +139,9 @@
       "sintetica": true,
       "transcripcion": "Este estudio, también liderado por John Hammond, llevó la persistencia de la nieve a escala planetaria. Con imágenes MODIS entre 2001 y 2016 hicimos mapas de las zonas con nieve de todo el mundo. Un dato que sorprende: en el hemisferio norte, la nieve intermitente, estacional o permanente cubre el sesenta y tres por ciento de la tierra; en el hemisferio sur, menos del cinco por ciento. Vimos que a menor altura la nieve depende más de la temperatura, y a mayor altura, de la precipitación. En Sudamérica, el patrón climático que más influye es el Modo Anular del Sur. En esos dieciséis años, la nieve disminuyó en casi el seis por ciento de las zonas nevadas y aumentó solo en el uno por ciento. Estos mapas permiten comparar regiones con un mismo criterio y ver dónde la nieve está cambiando más rápido.",
       "transcripcion_en": "This study, also led by John Hammond, took snow persistence to a planetary scale. Using MODIS imagery from 2001 to 2016 we mapped snow zones across the whole world. One surprising figure: in the northern hemisphere, intermittent, seasonal or permanent snow covers sixty-three percent of the land; in the southern hemisphere, less than five percent. We found that at lower elevations snow depends more on temperature, and at higher elevations on precipitation. In South America, the climate pattern with the greatest influence is the Southern Annular Mode. Over those sixteen years, snow decreased in almost six percent of snow zones and increased in only one percent. These maps make it possible to compare regions using the same criteria and see where snow is changing fastest.",
-      "duracion": 51
+      "duracion": 51,
+      "src_en": "assets/audio/en/6.mp3",
+      "duracion_en": 52
     }
   },
   {
@@ -159,7 +169,9 @@
       "sintetica": true,
       "transcripcion": "Cuando un río llega al mar, su agua dulce no desaparece de inmediato: forma una pluma que se extiende sobre el océano y lleva nutrientes que alimentan la vida costera. En este estudio, liderado por Julio Salcedo-Castro, usamos un modelo oceánico para entender cómo se comportan las plumas de los ríos Maipo y Rapel a lo largo del año. En verano y otoño, con poco caudal y vientos del suroeste, las plumas son pequeñas y apuntan al noroeste. Entre junio y septiembre, con las lluvias de invierno, crecen y se orientan hacia el oeste. Un detalle llamativo es que ambas plumas tienden a unirse, algo que también se ve en las imágenes satelitales. Entender esto ayuda a anticipar cómo llegan los nutrientes a la costa de Chile central.",
       "transcripcion_en": "When a river reaches the sea, its fresh water does not disappear right away: it forms a plume that spreads over the ocean and carries nutrients that feed coastal life. In this study, led by Julio Salcedo-Castro, we used an ocean model to understand how the plumes of the Maipo and Rapel rivers behave throughout the year. In summer and autumn, with low flow and south-westerly winds, the plumes are small and point north-west. Between June and September, with the winter rains, they grow and turn westward. A striking detail is that the two plumes tend to merge, something that can also be seen in satellite imagery. Understanding this helps anticipate how nutrients reach the coast of central Chile.",
-      "duracion": 44
+      "duracion": 44,
+      "src_en": "assets/audio/en/7.mp3",
+      "duracion_en": 46
     }
   },
   {
@@ -186,7 +198,9 @@
       "sintetica": true,
       "transcripcion": "Después de un gran incendio, quienes manejan el territorio necesitan saber qué laderas van a perder más suelo cuando llueva. Para eso existen modelos de erosión, pero ¿qué tan confiables son? En este estudio, liderado por Stephanie Kampf, pusimos a prueba varios modelos en el incendio de High Park, en Colorado, y comparamos sus resultados con mediciones reales en veintinueve laderas. A escala de ladera, solo el modelo construido con datos del mismo lugar se ajustó a lo observado. Pero a escala de cuenca, todos coincidieron bastante bien en identificar las zonas de alto y bajo riesgo. El problema está en las cantidades: las estimaciones de sedimento variaban mucho entre un modelo y otro. La conclusión práctica es que estos modelos sirven para priorizar dónde intervenir, pero necesitamos más mediciones en terreno para que sus números sean precisos.",
       "transcripcion_en": "After a large wildfire, land managers need to know which slopes will lose the most soil when it rains. Erosion models exist for that, but how reliable are they? In this study, led by Stephanie Kampf, we tested several models on the High Park fire in Colorado and compared their results with real measurements on twenty-nine hillslopes. At the hillslope scale, only the model built with data from the same site matched what was observed. But at the watershed scale, all of them agreed fairly well in identifying high- and low-risk areas. The problem lies in the amounts: sediment estimates varied widely from one model to another. The practical conclusion is that these models are useful for prioritising where to intervene, but we need more field measurements for their numbers to be accurate.",
-      "duracion": 51
+      "duracion": 51,
+      "src_en": "assets/audio/en/8.mp3",
+      "duracion_en": 49
     }
   },
   {
@@ -213,7 +227,9 @@
       "sintetica": true,
       "transcripcion": "Cerca del setenta y cinco por ciento de la población de Chile vive en la zona central, y buena parte de su agua viene de la nieve de la cordillera. En este trabajo quisimos entender cómo se relacionan la nieve y el caudal de los ríos. Usamos imágenes MODIS y datos climáticos en Google Earth Engine para estudiar subcuencas entre los 29 y 37 grados sur, entre 2000 y 2020. En el centro de esa zona, los ríos tienen un régimen nival: dependen principalmente del derretimiento. En los extremos, el régimen es mixto, de lluvia y nieve. Por eso hay un desfase: la nieve cae en invierno, pero el río alcanza su máximo meses después. También vimos que la nieve ha disminuido de forma constante en los últimos veinte años, sobre todo entre los 33 y 35 grados sur. Este enfoque permite monitorear cuencas donde casi no hay estaciones, y apoyar la seguridad hídrica de los territorios.",
       "transcripcion_en": "About seventy-five percent of Chile's population lives in the central zone, and much of its water comes from mountain snow. In this work we wanted to understand how snow and river flow are related. We used MODIS imagery and climate data in Google Earth Engine to study sub-basins between 29 and 37 degrees south, from 2000 to 2020. In the middle of that zone, rivers have a snowmelt regime: they depend mainly on melting snow. At the edges, the regime is mixed, rain and snow. That is why there is a lag: snow falls in winter, but the river peaks months later. We also found that snow has declined steadily over the last twenty years, especially between 33 and 35 degrees south. This approach makes it possible to monitor watersheds that have almost no stations, and to support water security in these territories.",
-      "duracion": 60
+      "duracion": 60,
+      "src_en": "assets/audio/en/9.mp3",
+      "duracion_en": 55
     }
   },
   {
@@ -240,7 +256,9 @@
       "sintetica": true,
       "transcripcion": "Este estudio, liderado por Julio Salcedo-Castro, continúa nuestro trabajo sobre las plumas de los ríos Maipo y Rapel: esa mancha de agua dulce que los ríos dejan en el mar. Esta vez usamos un modelo oceánico de alta resolución para simular la costa de Chile central entre 2003 y 2011. Vimos que el tamaño de las plumas y la salinidad de la costa dependen directamente del caudal de los ríos. Normalmente el viento las empuja hacia el noroeste, pero en invierno algunos episodios de viento pueden invertirlas, pegándolas a la costa y llevándolas hacia el sur. Y algo importante: durante la sequía, la costa se volvió más salada. Si en el futuro hay menos lluvia y menos caudal, este cambio en el mar podría volverse más frecuente, con efectos sobre la vida costera y la pesca.",
       "transcripcion_en": "This study, led by Julio Salcedo-Castro, continues our work on the Maipo and Rapel river plumes: the patch of fresh water that rivers leave in the sea. This time we used a high-resolution ocean model to simulate the coast of central Chile between 2003 and 2011. We found that the size of the plumes and coastal salinity depend directly on river flow. Wind normally pushes them north-west, but in winter some wind events can reverse them, pressing them against the coast and carrying them south. And something important: during the drought, the coast became saltier. If there is less rain and less river flow in the future, this change in the sea could become more frequent, with effects on coastal life and fisheries.",
-      "duracion": 48
+      "duracion": 48,
+      "src_en": "assets/audio/en/10.mp3",
+      "duracion_en": 47
     }
   },
   {
@@ -267,7 +285,9 @@
       "sintetica": true,
       "transcripcion": "Los glaciares andinos están perdiendo hielo rápidamente, pero en la mayoría de las cuencas no sabemos cuánto aporta ese derretimiento a los ríos. Este estudio, liderado por Alexis Caro, simuló la evolución de los glaciares en setecientas ochenta y seis cuencas, desde el norte de Sudamérica hasta la Patagonia, comparando las décadas de 2000 y de 2010. Antes corregimos los datos climáticos con mediciones en terreno, y validamos el modelo con glaciares monitoreados. Entre una década y otra, el volumen de los glaciares andinos se redujo en promedio un ocho por ciento. Al mismo tiempo, el derretimiento aumentó un doce por ciento: hoy los glaciares entregan más agua, pero lo hacen gastando su reserva. Estos resultados permiten estimar el aporte glaciar en cuencas como el Maipo, La Paz en Bolivia o el Baker en la Patagonia, y planificar mejor el agua del futuro.",
       "transcripcion_en": "Andean glaciers are losing ice fast, but in most watersheds we do not know how much that melt contributes to rivers. This study, led by Alexis Caro, simulated how glaciers evolved in seven hundred and eighty-six watersheds, from northern South America to Patagonia, comparing the 2000s and the 2010s. We first corrected the climate data with field measurements, and validated the model with monitored glaciers. From one decade to the next, the volume of Andean glaciers fell by eight percent on average. At the same time, melt increased by twelve percent: today glaciers deliver more water, but they do so by spending their reserves. These results make it possible to estimate the glacier contribution in watersheds such as the Maipo, La Paz in Bolivia or the Baker in Patagonia, and to plan future water supplies better.",
-      "duracion": 53
+      "duracion": 53,
+      "src_en": "assets/audio/en/11.mp3",
+      "duracion_en": 55
     }
   },
   {
@@ -294,7 +314,9 @@
       "sintetica": true,
       "transcripcion": "Chile central vive una megasequía desde 2010, que en 2019 se volvió una hipersequía. Nos preguntamos cómo afecta eso a la recuperación de los bosques después de un incendio. Analizamos imágenes Landsat entre 1987 y 2022 de cuarenta y dos incendios, y medimos cuánto reverdece la vegetación en los cinco años posteriores. Estudiamos tres tipos de bosque. En el bosque más seco, con quillay y litre, la recuperación dependió de la combinación entre la severidad del fuego y la intensidad de la sequía. En el bosque más húmedo, con peumo y boldo, además vimos diferencias claras entre los años de megasequía y de hipersequía. El bosque espinoso y el matorral, en cambio, no mostraron esa interacción. El mensaje es que la sequía prolongada está cambiando la forma en que nuestros bosques se recuperan del fuego, y eso hay que considerarlo para restaurarlos en un clima cada vez más seco.",
       "transcripcion_en": "Central Chile has been in a megadrought since 2010, which became a hyperdrought in 2019. We asked how that affects forest recovery after a wildfire. We analysed Landsat imagery from 1987 to 2022 for forty-two fires, and measured how much the vegetation greened up in the five years that followed. We studied three types of forest. In the driest forest, with quillay and litre trees, recovery depended on the combination of fire severity and drought intensity. In the wetter forest, with peumo and boldo, we also saw clear differences between megadrought and hyperdrought years. The thorn forest and shrubland, on the other hand, showed no such interaction. The message is that prolonged drought is changing the way our forests recover from fire, and that has to be taken into account to restore them in an increasingly dry climate.",
-      "duracion": 59
+      "duracion": 59,
+      "src_en": "assets/audio/en/15.mp3",
+      "duracion_en": 58
     }
   },
   {
@@ -321,7 +343,9 @@
       "sintetica": true,
       "transcripcion": "Cuando llueve fuerte en Valparaíso, los cerros pueden deslizarse. Saber cuánta lluvia basta para gatillar un deslizamiento es clave para dar alertas a tiempo. Pero los registros de lluvia y de deslizamientos nunca son perfectos: tienen errores de medición y de registro. En este trabajo, liderado por José González-Campos, propusimos una forma de definir ese umbral de lluvia que reconoce esa imprecisión, usando lógica difusa. En vez de una línea rígida que separa peligro de no peligro, el método trabaja con grados de riesgo. Usamos registros diarios de lluvia de estaciones meteorológicas de Valparaíso, desde 2008. El resultado es una herramienta más honesta con la incertidumbre de los datos, que puede ayudar a planificar alertas tempranas en ciudades de cerros como la nuestra.",
       "transcripcion_en": "When it rains hard in Valparaíso, the hills can slide. Knowing how much rain is enough to trigger a landslide is key to issuing timely warnings. But rainfall and landslide records are never perfect: they contain measurement and recording errors. In this work, led by José González-Campos, we proposed a way to define that rainfall threshold that acknowledges this imprecision, using fuzzy logic. Instead of a rigid line separating danger from no danger, the method works with degrees of risk. We used daily rainfall records from weather stations in Valparaíso, starting in 2008. The result is a tool that is more honest about the uncertainty in the data, and that can help plan early warnings in hillside cities like ours.",
-      "duracion": 47
+      "duracion": 47,
+      "src_en": "assets/audio/en/19.mp3",
+      "duracion_en": 47
     }
   },
   {
@@ -348,7 +372,9 @@
       "sintetica": true,
       "transcripcion": "El borde rural de la metrópolis de Valparaíso tiene un enorme valor natural: ahí está la Reserva de la Biosfera La Campana-Peñuelas. Pero ese mismo territorio está bajo presión por el crecimiento urbano. En este trabajo comparé lo que permite el plan regulador intercomunal de la zona con la zonificación de la reserva, que busca proteger sus áreas naturales y agrícolas. Al superponer ambos mapas aparecen conflictos: hay zonas donde el plan permite expandir la ciudad sobre áreas que la reserva considera de valor natural o agrícola, en todas sus zonas. En otras palabras, los instrumentos de planificación no conversan entre sí. Por eso propongo actualizar los criterios de sustentabilidad con que se hacen estos planes y fortalecer la participación ciudadana, para que el crecimiento de la ciudad no se coma lo que queremos conservar.",
       "transcripcion_en": "The rural edge of the Valparaíso metropolitan area has enormous natural value: it is home to the La Campana-Peñuelas Biosphere Reserve. But that same territory is under pressure from urban growth. In this work I compared what the area's inter-municipal zoning plan allows with the reserve's zoning, which seeks to protect its natural and agricultural areas. Overlaying both maps reveals conflicts: there are areas where the plan allows the city to expand onto land the reserve considers of natural or agricultural value, in every one of its zones. In other words, the planning instruments do not talk to each other. That is why I propose updating the sustainability criteria used to draw up these plans and strengthening public participation, so that the city's growth does not swallow what we want to conserve.",
-      "duracion": 50
+      "duracion": 50,
+      "src_en": "assets/audio/en/21.mp3",
+      "duracion_en": 51
     }
   },
   {
@@ -375,7 +401,9 @@
       "sintetica": true,
       "transcripcion": "Este estudio, liderado por Andreas Dietz, reunió casi cuarenta años de imágenes Landsat, entre 1985 y 2024, de dos cuencas clave: el Aconcagua y el Maipo, que abastecen a las regiones de Valparaíso y Metropolitana. Con ellas medimos, mes a mes, a qué altura comienza la nieve. La tendencia es clara: la línea de nieve sube unos once metros por año en el Aconcagua, y entre diez y dieciséis en el Maipo. Eso significa menos nieve y menos agua de deshielo. Si la tendencia continúa, hacia 2050 los meses de verano podrían tener hasta un cuarenta y dos por ciento menos de superficie nevada, con la línea de nieve hasta doscientos treinta metros más arriba. Son datos que conviene tener presentes al planificar el agua de las dos regiones más pobladas del país.",
       "transcripcion_en": "This study, led by Andreas Dietz, brought together almost forty years of Landsat imagery, from 1985 to 2024, for two key watersheds: the Aconcagua and the Maipo, which supply the Valparaíso and Metropolitan regions. With them we measured, month by month, the elevation at which snow begins. The trend is clear: the snow line is rising by about eleven metres per year in the Aconcagua, and by between ten and sixteen in the Maipo. That means less snow and less meltwater. If the trend continues, by 2050 the summer months could have up to forty-two percent less snow-covered area, with the snow line up to two hundred and thirty metres higher. These are figures worth keeping in mind when planning water for the country's two most populated regions.",
-      "duracion": 49
+      "duracion": 49,
+      "src_en": "assets/audio/en/22.mp3",
+      "duracion_en": 51
     }
   },
   {
@@ -402,7 +430,9 @@
       "sintetica": true,
       "transcripcion": "La nieve de los Andes abastece de agua potable, riego, energía e industria a millones de personas, pero las nubes y la falta de estaciones hacían difícil seguirla en toda la cordillera. En este trabajo usamos imágenes diarias de los satélites Terra y Aqua entre 2000 y 2025, con algoritmos que reducen el efecto de las nubes: pasamos de tener nubes el cuarenta y nueve por ciento del tiempo a solo el veintinueve. El resultado muestra que la nieve no responde igual en toda la cordillera. Entre los 29 y 36 grados sur, en los Andes centrales, se perdieron cerca de ochenta mil kilómetros cuadrados de cobertura de nieve en veintiséis años, y la línea de nieve subió entre cinco y quince metros por año, hasta quinientos metros en total. Es la única zona donde los cambios son claros a escala de cuenca. Los Andes centrales son hoy un punto crítico, con consecuencias directas para la seguridad hídrica.",
       "transcripcion_en": "Snow in the Andes supplies drinking water, irrigation, energy and industry to millions of people, but clouds and the lack of stations made it hard to track across the whole range. In this work we used daily imagery from the Terra and Aqua satellites from 2000 to 2025, with algorithms that reduce the effect of clouds: we went from having clouds forty-nine percent of the time to only twenty-nine. The result shows that snow does not respond the same way across the range. Between 29 and 36 degrees south, in the central Andes, about eighty thousand square kilometres of snow cover were lost in twenty-six years, and the snow line rose by between five and fifteen metres per year, up to five hundred metres in total. It is the only zone where the changes are clear at the watershed scale. The central Andes are now a hotspot, with direct consequences for water security.",
-      "duracion": 55
+      "duracion": 55,
+      "src_en": "assets/audio/en/23.mp3",
+      "duracion_en": 56
     }
   },
   {
@@ -429,7 +459,9 @@
       "sintetica": true,
       "transcripcion": "Medir la nieve en terreno es difícil: las estaciones son pocas, están en lugares extremos y sus datos suelen tener errores. En este trabajo, liderado por Alexis Caro, reunimos y revisamos los datos de altura de nieve de ochenta y una estaciones en Chile y Argentina, entre 2010 y 2024. Corregimos el nivel del suelo cuando no hay nieve y eliminamos valores imposibles. Eso hizo los datos mucho más confiables, aunque tuvimos que descartar una parte. También vimos cómo creció la red: de una estación en 2010 a cincuenta y siete en 2024, gracias sobre todo a la Dirección General de Aguas. Pero sigue siendo desigual: la mayoría está en los Andes mediterráneos. Con esta base encontramos que la nieve aumenta hacia el sur, junto con la precipitación, pero no siempre con la altura. La base es abierta y gratuita, para que cualquiera la use en modelos, pronósticos de caudal y gestión del agua.",
       "transcripcion_en": "Measuring snow in the field is hard: stations are few, they sit in extreme places and their data often contain errors. In this work, led by Alexis Caro, we gathered and reviewed snow depth data from eighty-one stations in Chile and Argentina, between 2010 and 2024. We corrected the ground level when there is no snow and removed impossible values. That made the data much more reliable, although we had to discard part of it. We also saw how the network grew: from one station in 2010 to fifty-seven in 2024, mainly thanks to Chile's General Directorate of Water. But it remains uneven: most stations are in the Mediterranean Andes. With this dataset we found that snow increases toward the south, along with precipitation, but not always with elevation. The dataset is open and free, so that anyone can use it in models, streamflow forecasts and water management.",
-      "duracion": 53
+      "duracion": 53,
+      "src_en": "assets/audio/en/24.mp3",
+      "duracion_en": 58
     }
   },
   {
@@ -459,7 +491,9 @@
       "sintetica": true,
       "transcripcion": "En julio de 2026 la cordillera de Chile central recibió una seguidilla de nevazones enormes. Después de más de una década de megasequía, la pregunta era obvia: ¿qué tan raro fue esto? El contexto ayuda. Este año tenemos un Súper El Niño, el más fuerte en una década, y el océano entre junio y agosto estuvo más cálido que nunca antes registrado. Para responder, juntamos dos tipos de datos. Por un lado, estaciones automáticas que miden todos los días la altura de la nieve y cuánta agua contiene. Por otro, las rutas de nieve que se miden a mano una vez al mes, algunas desde hace muchas décadas. Con esa historia larga calculamos cada cuánto tiempo se repite una acumulación así. El resultado: en los sitios más al norte, una nevada como la de este invierno ocurre, en promedio, una vez cada ocho a cuarenta años. No es algo que veamos todos los inviernos. Es una buena noticia para los embalses y el riego, pero también un recordatorio de lo variable que es nuestra nieve, y de por qué vale la pena seguir midiéndola.",
       "transcripcion_en": "In July 2026 the mountains of central Chile received a run of enormous snowstorms. After more than a decade of megadrought, the question was obvious: how unusual was this? The context helps. This year we have a Super El Niño, the strongest in a decade, and the ocean between June and August was warmer than ever recorded. To answer, we combined two kinds of data. On one hand, automatic stations that measure snow depth and how much water it holds every day. On the other, snow courses measured by hand once a month, some of them for many decades. With that long history we calculated how often an accumulation like this one recurs. The result: at the northernmost sites, a snowfall like this winter's happens, on average, once every eight to forty years. It is not something we see every winter. It is good news for reservoirs and irrigation, but also a reminder of how variable our snow is, and of why it is worth continuing to measure it.",
-      "duracion": 62
+      "duracion": 62,
+      "src_en": "assets/audio/en/25.mp3",
+      "duracion_en": 64
     }
   },
   {
@@ -489,7 +523,9 @@
       "sintetica": true,
       "transcripcion": "En Chile y Argentina, millones de personas dependen del agua que guarda la nieve de la cordillera. Cuando sube la temperatura, la nieve empieza a quedarse cada vez más arriba, y eso significa menos reserva de agua para el verano. A ese límite lo llamamos línea de nieve, y desde hace décadas lo seguimos con satélites. En este trabajo revisamos más de sesenta estudios sobre los Andes, con imágenes desde 1984 hasta 2025. Y nos encontramos con un problema: cada estudio mide la línea de nieve a su manera. Usan distintos satélites, distintas definiciones y distintas escalas. Algunos reportan que, en los Andes centrales, la nieve está subiendo entre diez y treinta metros por año, pero esas cifras no se pueden comparar directamente entre sí. Nuestra conclusión es que no existe una sola medida perfecta: depende de la pregunta. Para una tormenta puntual sirve una medida local; para entender el clima de una cuenca, otra distinta. Por eso proponemos cuatro tareas: hablar el mismo idioma, informar la incertidumbre, validar en terreno, y aprovechar mejor el radar y la computación en la nube. Así podremos saber con más certeza cuánta agua nos va a entregar la cordillera.",
       "transcripcion_en": "In Chile and Argentina, millions of people depend on the water stored in mountain snow. When temperatures rise, snow stays higher and higher up, and that means a smaller water reserve for the summer. We call that limit the snow line, and we have been tracking it with satellites for decades. In this work we reviewed more than sixty studies on the Andes, with imagery from 1984 to 2025. And we ran into a problem: every study measures the snow line its own way. They use different satellites, different definitions and different scales. Some report that, in the central Andes, snow is rising between ten and thirty metres per year, but those figures cannot be compared directly with each other. Our conclusion is that there is no single perfect measure: it depends on the question. For a single storm a local measure works; to understand the climate of a watershed, a different one. That is why we propose four tasks: speak the same language, report uncertainty, validate in the field, and make better use of radar and cloud computing. That way we will know with more certainty how much water the mountains will give us.",
-      "duracion": 73
+      "duracion": 73,
+      "src_en": "assets/audio/en/26.mp3",
+      "duracion_en": 73
     }
   },
   {
@@ -517,7 +553,9 @@
       "sintetica": true,
       "transcripcion": "La Reserva de la Biosfera La Campana–Peñuelas, entre Valparaíso y Olmué, es parte de una red mundial de territorios que deberían ser ejemplo de sustentabilidad. Pero, ¿lo están logrando? En este trabajo organizamos una Academia Abierta: un espacio donde vecinos, estudiantes, investigadores y personas de distintas generaciones evaluamos juntos cómo funciona la reserva. La evaluación tradicional mostró un desempeño más bien pobre y una gobernanza débil. Los problemas que aparecieron son concretos: la extracción de agua por la minería y la agroindustria, la urbanización sin control, los incendios, la poca participación social y la baja integración de los pueblos indígenas. Pero también vimos una oportunidad: estas reservas pueden ser lugares donde probar otras formas de vivir y de producir, y donde la comunidad decida el futuro de su territorio.",
       "transcripcion_en": "The La Campana–Peñuelas Biosphere Reserve, between Valparaíso and Olmué, is part of a global network of territories that should be models of sustainability. But are they achieving it? In this work we organised an Open Academy: a space where neighbours, students, researchers and people of different generations assessed together how the reserve works. The traditional assessment showed rather poor performance and weak governance. The problems that emerged are concrete: water extraction by mining and agribusiness, uncontrolled urbanisation, wildfires, little social participation and poor inclusion of Indigenous peoples. But we also saw an opportunity: these reserves can be places to try out other ways of living and producing, and where the community decides the future of its territory.",
-      "duracion": 52
+      "duracion": 52,
+      "src_en": "assets/audio/en/27.mp3",
+      "duracion_en": 50
     }
   },
   {
@@ -545,7 +583,9 @@
       "sintetica": true,
       "transcripcion": "Chile central es uno de los lugares con más biodiversidad del planeta y, al mismo tiempo, donde vive la mayor parte de la población del país. En este estudio, liderado por Andrés Moreira-Muñoz, usamos treinta y cinco años de imágenes satelitales, entre 1985 y 2020, para seguir dos procesos en la región que va de Valparaíso a Santiago: cómo crece la ciudad hacia el campo, y dónde y cuántas veces se repiten los incendios. Luego comparamos esos mapas con las áreas de mayor valor ecológico. El resultado es claro: la ciudad no ha dejado de expandirse, y los incendios están golpeando directamente la biodiversidad. En medio de este escenario, la Reserva de la Biosfera La Campana–Peñuelas aparece como una pieza clave para avanzar hacia la sustentabilidad. La mayor amenaza, en cambio, es dejar que el mercado decida por sí solo cómo se usa el territorio.",
       "transcripcion_en": "Central Chile is one of the most biodiverse places on the planet and, at the same time, where most of the country's population lives. In this study, led by Andrés Moreira-Muñoz, we used thirty-five years of satellite imagery, from 1985 to 2020, to track two processes in the region that runs from Valparaíso to Santiago: how the city grows into the countryside, and where and how often wildfires recur. We then compared those maps with the areas of greatest ecological value. The result is clear: the city has never stopped expanding, and wildfires are hitting biodiversity directly. In this scenario, the La Campana–Peñuelas Biosphere Reserve stands out as a key piece for moving toward sustainability. The greatest threat, by contrast, is letting the market alone decide how the land is used.",
-      "duracion": 55
+      "duracion": 55,
+      "src_en": "assets/audio/en/28.mp3",
+      "duracion_en": 54
     }
   },
   {
@@ -572,7 +612,9 @@
       "sintetica": true,
       "transcripcion": "La red mundial de Reservas de la Biosfera de la UNESCO cumple cincuenta años. Este comentario, liderado por Andrés Moreira-Muñoz, aprovecha ese momento para preguntarse qué deberían ser hoy estos territorios. Proponemos mirarlos desde América Latina, cruzando los principios de la UNESCO con ideas como el Buen Vivir y el Buen Convivir. La idea es que las reservas no sean solo áreas protegidas, sino lugares donde se construya una paz ecosocial: una relación más justa entre las personas, y también con las demás especies con las que compartimos el territorio. Para eso, la educación, el diálogo entre culturas y la vida comunitaria son fundamentales, frente a un modelo de desarrollo basado en la extracción.",
       "transcripcion_en": "UNESCO's world network of Biosphere Reserves is turning fifty. This commentary, led by Andrés Moreira-Muñoz, uses that moment to ask what these territories should be today. We propose looking at them from Latin America, bringing UNESCO's principles together with ideas such as Buen Vivir and Buen Convivir. The idea is that reserves should not just be protected areas, but places where an eco-social peace is built: a fairer relationship among people, and also with the other species we share the land with. For that, education, dialogue between cultures and community life are essential, in the face of a development model based on extraction.",
-      "duracion": 43
+      "duracion": 43,
+      "src_en": "assets/audio/en/29.mp3",
+      "duracion_en": 41
     }
   }
 ]

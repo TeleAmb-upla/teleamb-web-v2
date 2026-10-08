@@ -202,23 +202,28 @@
     const id = "pub-" + esc(p.ID);
     const a = p.Audio;
     const first = a ? esc(a.voz.split(" ")[0]) : "";
-    const voice = a && (a.sintetica ? (EN ? "synthetic voice, in Spanish" : "voz sintetizada") : EN ? "in Spanish" : "en su voz");
+    const enAudio = EN && !!(a && a.src_en);
+    const src = a && (enAudio ? a.src_en : a.src);
+    const dur = a ? (enAudio ? a.duracion_en : a.duracion) || 0 : 0;
+    const voice = a && (a.sintetica
+      ? (EN ? (enAudio ? "synthetic voice" : "synthetic voice, in Spanish") : "voz sintetizada")
+      : EN ? (enAudio ? "in their voice" : "in Spanish") : "en su voz");
     const listen = a
-      ? `<button class="listen" type="button" data-audio="${esc(a.src)}" data-dur="${a.duracion || 0}" aria-label="${EN ? `Listen to a summary narrated by ${esc(a.voz)}, in Spanish` : `Escuchar resumen narrado por ${esc(a.voz)}`} (${mmss(a.duracion || 0)})">
+      ? `<button class="listen" type="button" data-audio="${esc(src)}" data-dur="${dur}" aria-label="${EN ? `Listen to a summary narrated by ${esc(a.voz)}${enAudio ? "" : ", in Spanish"}` : `Escuchar resumen narrado por ${esc(a.voz)}`} (${mmss(dur)})">
           <span class="listen__icon">${PLAY}</span>
-          <span class="listen__txt"><b>${EN ? "Listen to" : "Escuchar a"} ${first}</b><small><span data-time>${mmss(a.duracion || 0)}</span> · ${voice}</small></span>
+          <span class="listen__txt"><b>${EN ? "Listen to" : "Escuchar a"} ${first}</b><small><span data-time>${mmss(dur)}</span> · ${voice}</small></span>
           <span class="listen__bar" aria-hidden="true"><i></i></span>
         </button>`
       : "";
     const note = a && a.sintetica
       ? EN
-        ? `Narrated in Spanish with a synthetic voice from a first-person script. It will be replaced by ${esc(a.voz)}'s own recording.`
+        ? `Narrated with a synthetic voice from a first-person script${enAudio ? "" : ", in Spanish"}. It will be replaced by ${esc(a.voz)}'s own recording.`
         : `Narración con voz sintetizada a partir de un guion en primera persona. Será reemplazada por la grabación de ${esc(a.voz)}.`
       : "";
     const panels = compact
       ? ""
       : `<div class="paper__panel" id="${id}-abs" hidden><h4>${t("Resumen científico")}</h4><p${EN ? ' lang="en"' : ""}>${esc(abstract)}</p></div>
-         ${a ? `<div class="paper__panel" id="${id}-tr" hidden><h4>${EN ? "Audio transcript (English translation)" : "Transcripción del audio"}</h4><p>${esc(L(a, "transcripcion"))}</p>${note ? `<p class="paper__note">${note}</p>` : ""}</div>` : ""}`;
+         ${a ? `<div class="paper__panel" id="${id}-tr" hidden><h4>${EN ? (enAudio ? "Audio transcript" : "Audio transcript (English translation)") : "Transcripción del audio"}</h4><p>${esc(L(a, "transcripcion"))}</p>${note ? `<p class="paper__note">${note}</p>` : ""}</div>` : ""}`;
     const tools = compact
       ? ""
       : `<button class="paper__tool" type="button" aria-expanded="false" aria-controls="${id}-abs" data-panel>${t("Resumen científico")}</button>
