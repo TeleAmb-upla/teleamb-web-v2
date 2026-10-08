@@ -31,9 +31,14 @@
   const esc = (s) =>
     String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
+  const EN = window.TA_LANG === "en";
+  const t = window.TA_t || ((s) => s);
+  // Campo traducido si existe (p. ej. titulo_en), si no el original.
+  const L = (o, k) => (EN && o[k + "_en"]) || o[k];
+
   const fmtDate = (iso) => {
     const d = new Date(iso + "T12:00:00");
-    return isNaN(d) ? "" : d.toLocaleDateString("es-CL", { year: "numeric", month: "short", day: "numeric" });
+    return isNaN(d) ? "" : d.toLocaleDateString(EN ? "en-GB" : "es-CL", { year: "numeric", month: "short", day: "numeric" });
   };
 
   function topicOf(n) {
@@ -84,7 +89,9 @@
   }
 
   function fail(el, what) {
-    el.innerHTML = `<p class="empty">No fue posible cargar ${what}. Si abres el sitio directamente desde el disco, usa un servidor local (ver README).</p>`;
+    el.innerHTML = EN
+      ? `<p class="empty">Could not load ${what}. If you are opening the site straight from disk, use a local server (see README).</p>`
+      : `<p class="empty">No fue posible cargar ${what}. Si abres el sitio directamente desde el disco, usa un servidor local (ver README).</p>`;
   }
 
   // ---------- Noticias ----------
@@ -92,9 +99,9 @@
     return `
       <a class="news-card" href="${esc(n.url)}" target="_blank" rel="noopener" data-reveal style="--d:${(i % 3) * 0.08}s">
         <div class="news-card__img"><img src="${esc(n.imagen)}" alt="" loading="lazy" decoding="async"></div>
-        <div class="news-card__meta"><span class="tag"${toneAttr(topicOf(n))}>${topicOf(n)}</span><time datetime="${esc(n.fecha)}">${fmtDate(n.fecha)}</time></div>
-        <h3>${esc(n.titulo)}</h3>
-        <p>${esc(n.subtitulo)}</p>
+        <div class="news-card__meta"><span class="tag"${toneAttr(topicOf(n))}>${esc(t(topicOf(n)))}</span><time datetime="${esc(n.fecha)}">${fmtDate(n.fecha)}</time></div>
+        <h3>${esc(L(n, "titulo"))}</h3>
+        <p>${esc(L(n, "subtitulo"))}</p>
       </a>`;
   }
 
@@ -118,15 +125,17 @@
       let shown = 9;
 
       filters.innerHTML = topics
-        .map((t) => `<button class="filter-btn" type="button" aria-pressed="${t === topic}" data-topic="${esc(t)}">${esc(t)}</button>`)
+        .map((k) => `<button class="filter-btn" type="button" aria-pressed="${k === topic}" data-topic="${esc(k)}">${esc(t(k))}</button>`)
         .join("");
 
       const draw = () => {
         const q = (search.value || "").toLowerCase().trim();
         const list = all.filter(
-          (n) => (topic === "Todas" || topicOf(n) === topic) && (!q || (n.titulo + " " + n.subtitulo).toLowerCase().includes(q))
+          (n) =>
+            (topic === "Todas" || topicOf(n) === topic) &&
+            (!q || [n.titulo, n.subtitulo, n.titulo_en, n.subtitulo_en].join(" ").toLowerCase().includes(q))
         );
-        el.innerHTML = list.length ? list.slice(0, shown).map(newsCard).join("") : '<p class="empty">Sin resultados.</p>';
+        el.innerHTML = list.length ? list.slice(0, shown).map(newsCard).join("") : `<p class="empty">${t("Sin resultados.")}</p>`;
         el.classList.toggle("news-grid--featured", !q && topic === "Todas");
         more.hidden = list.length <= shown;
         done(el);
@@ -150,7 +159,7 @@
       });
       draw();
     } catch (e) {
-      fail(el, "las noticias");
+      fail(el, EN ? "the news" : "las noticias");
     }
   }
 
@@ -166,7 +175,7 @@
   function shortAuthors(a, max) {
     const list = a.split(/,\s*/);
     if (list.length <= max + 1) return authorsHTML(a);
-    return `${authorsHTML(list.slice(0, max - 1).join(", "))} … ${authorsHTML(list[list.length - 1])} <span class="paper__more">+${list.length - max} ${list.length - max === 1 ? "autor" : "autores"}</span>`;
+    return `${authorsHTML(list.slice(0, max - 1).join(", "))} … ${authorsHTML(list[list.length - 1])} <span class="paper__more">+${list.length - max} ${list.length - max === 1 ? (EN ? "author" : "autor") : EN ? "authors" : "autores"}</span>`;
   }
 
   function pubTopic(p) {
@@ -185,48 +194,55 @@
   }
 
   function paperHTML(p, compact) {
-    const title = p.Titulo?.es || p.Titulo?.en || "";
-    const abstract = p.Extracto?.es || p.Extracto?.en || "";
+    const title = EN ? p.Titulo?.en || p.Titulo?.es || "" : p.Titulo?.es || p.Titulo?.en || "";
+    const abstract = EN ? p.Extracto?.en || p.Extracto?.es || "" : p.Extracto?.es || p.Extracto?.en || "";
     const topic = pubTopic(p);
     const journal = publisherOf(p.DOI);
     const oa = OPEN_ACCESS.some((k) => p.DOI.includes(k));
     const id = "pub-" + esc(p.ID);
     const a = p.Audio;
+    const first = a ? esc(a.voz.split(" ")[0]) : "";
+    const voice = a && (a.sintetica ? (EN ? "synthetic voice, in Spanish" : "voz sintetizada") : EN ? "in Spanish" : "en su voz");
     const listen = a
-      ? `<button class="listen" type="button" data-audio="${esc(a.src)}" data-dur="${a.duracion || 0}" aria-label="Escuchar resumen narrado por ${esc(a.voz)} (${mmss(a.duracion || 0)})">
+      ? `<button class="listen" type="button" data-audio="${esc(a.src)}" data-dur="${a.duracion || 0}" aria-label="${EN ? `Listen to a summary narrated by ${esc(a.voz)}, in Spanish` : `Escuchar resumen narrado por ${esc(a.voz)}`} (${mmss(a.duracion || 0)})">
           <span class="listen__icon">${PLAY}</span>
-          <span class="listen__txt"><b>Escuchar a ${esc(a.voz.split(" ")[0])}</b><small><span data-time>${mmss(a.duracion || 0)}</span> · ${a.sintetica ? "voz sintetizada" : "en su voz"}</small></span>
+          <span class="listen__txt"><b>${EN ? "Listen to" : "Escuchar a"} ${first}</b><small><span data-time>${mmss(a.duracion || 0)}</span> · ${voice}</small></span>
           <span class="listen__bar" aria-hidden="true"><i></i></span>
         </button>`
       : "";
+    const note = a && a.sintetica
+      ? EN
+        ? `Narrated in Spanish with a synthetic voice from a first-person script. It will be replaced by ${esc(a.voz)}'s own recording.`
+        : `Narración con voz sintetizada a partir de un guion en primera persona. Será reemplazada por la grabación de ${esc(a.voz)}.`
+      : "";
     const panels = compact
       ? ""
-      : `<div class="paper__panel" id="${id}-abs" hidden><h4>Resumen científico</h4><p>${esc(abstract)}</p></div>
-         ${a ? `<div class="paper__panel" id="${id}-tr" hidden><h4>Transcripción del audio</h4><p>${esc(a.transcripcion)}</p>${a.sintetica ? `<p class="paper__note">Narración con voz sintetizada a partir de un guion en primera persona. Será reemplazada por la grabación de ${esc(a.voz)}.</p>` : ""}</div>` : ""}`;
+      : `<div class="paper__panel" id="${id}-abs" hidden><h4>${t("Resumen científico")}</h4><p${EN ? ' lang="en"' : ""}>${esc(abstract)}</p></div>
+         ${a ? `<div class="paper__panel" id="${id}-tr" hidden><h4>${EN ? "Audio transcript (English translation)" : "Transcripción del audio"}</h4><p>${esc(L(a, "transcripcion"))}</p>${note ? `<p class="paper__note">${note}</p>` : ""}</div>` : ""}`;
     const tools = compact
       ? ""
-      : `<button class="paper__tool" type="button" aria-expanded="false" aria-controls="${id}-abs" data-panel>Resumen científico</button>
-         ${a ? `<button class="paper__tool" type="button" aria-expanded="false" aria-controls="${id}-tr" data-panel>Transcripción</button>` : ""}
-         <button class="paper__tool" type="button" data-cite="${esc(citation(p))}">Citar</button>`;
+      : `<button class="paper__tool" type="button" aria-expanded="false" aria-controls="${id}-abs" data-panel>${t("Resumen científico")}</button>
+         ${a ? `<button class="paper__tool" type="button" aria-expanded="false" aria-controls="${id}-tr" data-panel>${t("Transcripción")}</button>` : ""}
+         <button class="paper__tool" type="button" data-cite="${esc(citation(p))}">${t("Citar")}</button>`;
     return `
       <article class="paper${compact ? " paper--compact" : ""}" data-topic="${esc(topic)}"${toneAttr(topic)} data-reveal>
         <div class="paper__main">
           <p class="paper__kicker">
-            <span class="paper__topic">${esc(topic)}</span>
-            <span>${esc(p.Tipo || "Artículo")}</span>
+            <span class="paper__topic">${esc(t(topic))}</span>
+            <span>${esc(t(p.Tipo || "Artículo"))}</span>
             ${p.Preprint ? '<span class="paper__badge">Preprint</span>' : ""}
-            ${oa ? '<span class="paper__oa">Acceso abierto</span>' : ""}
+            ${oa ? `<span class="paper__oa">${t("Acceso abierto")}</span>` : ""}
             <time${p.Fecha ? ` datetime="${esc(p.Fecha)}"` : ""}>${p.Fecha ? fmtDate(p.Fecha) : esc(p.Año)}</time>
           </p>
           <h3 class="paper__title"><a href="${esc(p.DOI)}" target="_blank" rel="noopener">${esc(title)}</a></h3>
-          ${!compact && p.Titulo?.en ? `<p class="paper__orig" lang="en">${esc(p.Titulo.en)}</p>` : ""}
-          ${p.Divulgacion ? `<p class="paper__stand">${esc(p.Divulgacion)}</p>` : ""}
+          ${!compact && !EN && p.Titulo?.en ? `<p class="paper__orig" lang="en">${esc(p.Titulo.en)}</p>` : ""}
+          ${p.Divulgacion ? `<p class="paper__stand">${esc(L(p, "Divulgacion"))}</p>` : ""}
           <p class="paper__authors">${shortAuthors(p.Autor, compact ? 4 : 7)}</p>
-          <p class="paper__source"><i>${esc(journal)}</i>${p.Estado ? ` · ${esc(p.Estado)}` : ""}</p>
+          <p class="paper__source"><i>${esc(journal)}</i>${p.Estado ? ` · ${esc(t(p.Estado))}` : ""}</p>
           <div class="paper__actions">
             ${listen}
             ${tools}
-            <a class="paper__tool paper__tool--go" href="${esc(p.DOI)}" target="_blank" rel="noopener">Leer artículo ${ARROW}</a>
+            <a class="paper__tool paper__tool--go" href="${esc(p.DOI)}" target="_blank" rel="noopener">${t("Leer artículo")} ${ARROW}</a>
           </div>
           ${panels}
         </div>
@@ -287,8 +303,8 @@
       const cite = e.target.closest("[data-cite]");
       if (cite && navigator.clipboard) {
         navigator.clipboard.writeText(cite.dataset.cite).then(() => {
-          cite.textContent = "Cita copiada";
-          setTimeout(() => (cite.textContent = "Citar"), 1800);
+          cite.textContent = t("Cita copiada");
+          setTimeout(() => (cite.textContent = t("Citar")), 1800);
         });
       }
     });
@@ -321,13 +337,15 @@
       let topic = "Todas";
 
       filters.innerHTML = topics
-        .map((t) => `<button class="filter-btn" type="button" aria-pressed="${t === topic}" data-t="${esc(t)}"${toneAttr(t)}>${esc(t)}</button>`)
+        .map((k) => `<button class="filter-btn" type="button" aria-pressed="${k === topic}" data-t="${esc(k)}"${toneAttr(k)}>${esc(t(k))}</button>`)
         .join("");
 
       const draw = () => {
         const q = (search.value || "").toLowerCase().trim();
         const list = all.filter((p) => {
-          const hay = [p.Titulo?.es, p.Titulo?.en, p.Autor, p.Divulgacion, p.Extracto?.es].join(" ").toLowerCase();
+          const hay = [p.Titulo?.es, p.Titulo?.en, p.Autor, p.Divulgacion, p.Divulgacion_en, p.Extracto?.es, EN && p.Extracto?.en, t(pubTopic(p))]
+            .join(" ")
+            .toLowerCase();
           const ok = topic === "Todas" || (topic === "Con audio" ? !!p.Audio : pubTopic(p) === topic);
           return ok && (!q || hay.includes(q));
         });
@@ -337,10 +355,10 @@
           ? years
               .map((y) => {
                 const items = list.filter((p) => p.Año === y);
-                return `<section class="paper-year"><h2 class="paper-year__head"><span>${y}</span><small>${items.length} ${items.length === 1 ? "publicación" : "publicaciones"}</small></h2>${items.map((p) => paperHTML(p, false)).join("")}</section>`;
+                return `<section class="paper-year"><h2 class="paper-year__head"><span>${y}</span><small>${items.length} ${items.length === 1 ? t("publicación") : t("publicaciones")}</small></h2>${items.map((p) => paperHTML(p, false)).join("")}</section>`;
               })
               .join("")
-          : '<p class="empty">Sin resultados.</p>';
+          : `<p class="empty">${t("Sin resultados.")}</p>`;
         done(el);
       };
 
@@ -354,7 +372,7 @@
       search.addEventListener("input", draw);
       draw();
     } catch (e) {
-      fail(el, "las publicaciones");
+      fail(el, EN ? "the publications" : "las publicaciones");
     }
   }
 
@@ -369,14 +387,14 @@
 
   function memberCard(m, i) {
     const photo = m.foto
-      ? `<img src="${esc(m.foto)}" alt="Retrato de ${esc(m.nombre)}" loading="lazy" decoding="async">`
+      ? `<img src="${esc(m.foto)}" alt="${EN ? "Portrait of" : "Retrato de"} ${esc(m.nombre)}" loading="lazy" decoding="async">`
       : `<span class="member__initials">${esc(initials(m.nombre))}</span>`;
     return `
       <article class="member" data-group="${esc(m.grupo || "antiguos")}" data-reveal style="--d:${(i % 4) * 0.07}s">
         <div class="member__photo">${photo}</div>
-        ${m.rol ? `<span class="member__role">${esc(m.rol)}</span>` : ""}
+        ${m.rol ? `<span class="member__role">${esc(t(m.rol))}</span>` : ""}
         <h3>${esc(m.nombre)}</h3>
-        <p>${esc(m.bio)}</p>
+        <p>${esc(L(m, "bio"))}</p>
         ${m.email ? `<a class="member__mail" href="mailto:${esc(m.email)}">${esc(m.email)}</a>` : ""}
       </article>`;
   }
@@ -395,13 +413,13 @@
 
       const filters = document.querySelector("[data-team-filters]");
       const groups = [
-        ["todos", "Todo el equipo"],
-        ["direccion", "Dirección"],
-        ["investigacion", "Investigación"],
-        ["comunicaciones", "Comunicaciones"],
+        ["todos", "Todo el equipo", "Whole team"],
+        ["direccion", "Dirección", "Leadership"],
+        ["investigacion", "Investigación", "Research"],
+        ["comunicaciones", "Comunicaciones", "Communications"],
       ];
       filters.innerHTML = groups
-        .map(([k, l], i) => `<button class="filter-btn" type="button" aria-pressed="${i === 0}" data-g="${k}">${l}</button>`)
+        .map(([k, es, en], i) => `<button class="filter-btn" type="button" aria-pressed="${i === 0}" data-g="${k}">${EN ? en : es}</button>`)
         .join("");
       el.innerHTML = data.actual.map(memberCard).join("");
 
@@ -418,7 +436,7 @@
       if (alumni) alumni.innerHTML = data.antiguos.map(memberCard).join("");
       done(document);
     } catch (e) {
-      fail(el, "el equipo");
+      fail(el, EN ? "the team" : "el equipo");
     }
   }
 
@@ -437,32 +455,32 @@
         <li>
           <a class="showcase__item" href="${esc(p.url)}" target="_blank" rel="noopener" data-i="${i}"${toneAttr(p.categoria)}>
             <span class="showcase__num">${pad(i)}</span>
-            <span class="showcase__title">${esc(p.titulo)}<small>${esc(p.categoria)} · ${esc(p.proyecto)}</small></span>
+            <span class="showcase__title">${esc(L(p, "titulo"))}<small>${esc(t(p.categoria))} · ${esc(t(p.proyecto))}</small></span>
             <span class="showcase__go">${ARROW}</span>
             <span class="showcase__bar" aria-hidden="true"></span>
             <span class="showcase__mobile">
               <img src="${esc(p.imagen)}" alt="" loading="lazy" decoding="async">
-              <span>${esc(p.descripcion)}</span>
+              <span>${esc(L(p, "descripcion"))}</span>
             </span>
           </a>
         </li>`
       )
       .join("");
     const shots = list
-      .map((p, i) => `<img src="${esc(p.imagen)}" alt="Vista de ${esc(p.titulo)}" loading="lazy" decoding="async" data-shot="${i}">`)
+      .map((p, i) => `<img src="${esc(p.imagen)}" alt="${EN ? "View of" : "Vista de"} ${esc(L(p, "titulo"))}" loading="lazy" decoding="async" data-shot="${i}">`)
       .join("");
     return `
       <ol class="showcase__list">${items}</ol>
       <div class="showcase__stage">
         <div class="browser">
-          <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url" data-sc-url></span><span class="browser__live">En línea</span></div>
+          <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url" data-sc-url></span><span class="browser__live">${t("En línea")}</span></div>
           <div class="browser__view">${shots}<span class="browser__scan" aria-hidden="true"></span><span class="browser__idx mono" data-sc-idx></span></div>
         </div>
         <div class="showcase__info">
           <div class="showcase__meta"><span class="tag" data-sc-cat></span><span class="mono" data-sc-proj></span></div>
           <p data-sc-desc></p>
           <div class="chips" data-sc-chips></div>
-          <a class="btn btn--primary" data-sc-link href="#" target="_blank" rel="noopener">Abrir plataforma ${ARROW}</a>
+          <a class="btn btn--primary" data-sc-link href="#" target="_blank" rel="noopener">${t("Abrir plataforma")} ${ARROW}</a>
         </div>
       </div>`;
   }
@@ -482,11 +500,11 @@
       shots.forEach((s, k) => s.classList.toggle("is-on", k === i));
       $("[data-sc-url]").textContent = shortUrl(p.url);
       $("[data-sc-idx]").textContent = `${pad(i)} / ${pad(list.length - 1)}`;
-      $("[data-sc-cat]").textContent = p.categoria;
+      $("[data-sc-cat]").textContent = t(p.categoria);
       $(".showcase__info").dataset.tone = TONES[p.categoria] || "";
-      $("[data-sc-proj]").textContent = p.proyecto;
-      $("[data-sc-desc]").textContent = p.descripcion;
-      $("[data-sc-chips]").innerHTML = p.chips.map((c) => `<span class="chip">${esc(c)}</span>`).join("");
+      $("[data-sc-proj]").textContent = t(p.proyecto);
+      $("[data-sc-desc]").textContent = L(p, "descripcion");
+      $("[data-sc-chips]").innerHTML = p.chips.map((c) => `<span class="chip">${esc(t(c))}</span>`).join("");
       $("[data-sc-link]").href = p.url;
     };
 
@@ -518,12 +536,12 @@
           <div class="browser__view"><img src="${esc(p.imagen)}" alt="" loading="lazy" decoding="async"></div>
         </a>
         <div class="pcard__body">
-          <span class="pcard__num">${pad(i)} / ${esc(p.categoria)}</span>
-          <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.titulo)}</a></h3>
-          <p class="pcard__proj mono">${esc(p.proyecto)}</p>
-          <p>${esc(p.descripcion)}</p>
-          <div class="chips">${p.chips.map((c) => `<span class="chip">${esc(c)}</span>`).join("")}</div>
-          <a class="link-arrow" href="${esc(p.url)}" target="_blank" rel="noopener">Abrir plataforma</a>
+          <span class="pcard__num">${pad(i)} / ${esc(t(p.categoria))}</span>
+          <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(L(p, "titulo"))}</a></h3>
+          <p class="pcard__proj mono">${esc(t(p.proyecto))}</p>
+          <p>${esc(L(p, "descripcion"))}</p>
+          <div class="chips">${p.chips.map((c) => `<span class="chip">${esc(t(c))}</span>`).join("")}</div>
+          <a class="link-arrow" href="${esc(p.url)}" target="_blank" rel="noopener">${t("Abrir plataforma")}</a>
         </div>
       </article>`;
   }
@@ -545,7 +563,7 @@
       if (filters) {
         const cats = ["Todas", ...new Set(list.map((p) => p.categoria))];
         filters.innerHTML = cats
-          .map((c, i) => `<button class="filter-btn" type="button" aria-pressed="${i === 0}" data-c="${esc(c)}">${esc(c)}</button>`)
+          .map((c, i) => `<button class="filter-btn" type="button" aria-pressed="${i === 0}" data-c="${esc(c)}">${esc(t(c))}</button>`)
           .join("");
         filters.addEventListener("click", (e) => {
           const b = e.target.closest("[data-c]");
@@ -558,7 +576,7 @@
       }
       done(el);
     } catch (e) {
-      fail(el, "las plataformas");
+      fail(el, EN ? "the platforms" : "las plataformas");
     }
   }
 

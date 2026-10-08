@@ -23,6 +23,13 @@ Luego abrir <http://localhost:8000>.
 
 Las noticias se ordenan por fecha automáticamente y su categoría (Nieve, Incendios, Ciudades…) se deduce del título. En el equipo, `grupo` puede ser `direccion`, `investigacion` o `comunicaciones`.
 
+## Inglés
+
+El botón ES / EN de la cabecera cambia el idioma y la elección se recuerda entre páginas (también funciona `?lang=en` en la URL).
+
+- **Datos:** cada texto tiene su versión en inglés en un campo con sufijo `_en` (`titulo_en`, `subtitulo_en`, `descripcion_en`, `bio_en`, `Divulgacion_en`, `Audio.transcripcion_en`). Las publicaciones usan `Titulo.en` y `Extracto.en`. Si falta el campo `_en`, se muestra el español.
+- **Páginas:** los textos fijos del HTML se traducen con `assets/js/i18n-en.js`. La clave es el texto en español tal como está en el HTML; si se edita un texto en el HTML, hay que actualizar su clave en ese archivo o quedará en español.
+
 ## Imágenes
 
 Las imágenes originales van en `_originales/` (no se publican). Para generar las versiones WebP optimizadas:
@@ -45,4 +52,6 @@ assets/js/main.js     Interacciones generales
 assets/js/terrain.js  Nube de puntos del hero
 assets/js/spectral.js Laboratorio espectral interactivo
 assets/js/data.js     Render de noticias, publicaciones y equipo
+assets/js/i18n.js     Selector de idioma y traducción de las páginas
+assets/js/i18n-en.js  Diccionario español → inglés
 ```

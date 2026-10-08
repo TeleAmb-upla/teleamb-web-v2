@@ -19,18 +19,20 @@
   const H = Math.round(W / (16 / 11));
   let src = null;
 
+  const T = window.TA_t || ((s) => s);
+
   const CLASSES = [
-    { key: "nieve", name: "Nieve / hielo", color: [236, 248, 255] },
-    { key: "veg", name: "Vegetación", color: [92, 184, 122] },
-    { key: "suelo", name: "Roca / suelo desnudo", color: [227, 154, 45] },
-    { key: "sombra", name: "Sombra / agua", color: [11, 60, 93] },
+    { key: "nieve", name: T("Nieve / hielo"), color: [236, 248, 255] },
+    { key: "veg", name: T("Vegetación"), color: [92, 184, 122] },
+    { key: "suelo", name: T("Roca / suelo desnudo"), color: [227, 154, 45] },
+    { key: "sombra", name: T("Sombra / agua"), color: [11, 60, 93] },
   ];
 
   const MODES = {
-    clasificacion: { label: "Clasificación de coberturas", fn: classify },
-    nieve: { label: "Índice de nieve (proxy)", fn: snowIndex },
-    vigor: { label: "Vigor vegetal (proxy NIR)", fn: vigorIndex },
-    bordes: { label: "Bordes · filtro Sobel", fn: sobel },
+    clasificacion: { label: T("Clasificación de coberturas"), fn: classify },
+    nieve: { label: T("Índice de nieve (proxy)"), fn: snowIndex },
+    vigor: { label: T("Vigor vegetal (proxy NIR)"), fn: vigorIndex },
+    bordes: { label: T("Bordes · filtro Sobel"), fn: sobel },
   };
 
   function lerpRamp(stops, t) {
@@ -108,7 +110,7 @@
       out[i + 2] = c[2];
       out[i + 3] = 255;
     }
-    rampLegend(SNOW_RAMP, "Sin nieve", "Nieve");
+    rampLegend(SNOW_RAMP, T("Sin nieve"), T("Nieve"));
   }
 
   function vigorIndex(d, out) {
@@ -121,7 +123,7 @@
       out[i + 2] = c[2];
       out[i + 3] = 255;
     }
-    rampLegend(VIGOR_RAMP, "Bajo", "Alto");
+    rampLegend(VIGOR_RAMP, T("Bajo"), T("Alto"));
   }
 
   function sobel(d, out) {
@@ -151,7 +153,7 @@
         out[i + 3] = 255;
       }
     }
-    rampLegend([[0, [4, 9, 15]], [1, [127, 224, 236]]], "Homogéneo", "Borde");
+    rampLegend([[0, [4, 9, 15]], [1, [127, 224, 236]]], T("Homogéneo"), T("Borde"));
   }
 
   function render(mode) {

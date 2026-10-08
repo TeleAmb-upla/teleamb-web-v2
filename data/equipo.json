@@ -5,6 +5,7 @@
       "rol": "Directivo",
       "grupo": "direccion",
       "bio": "Ingeniero Agrónomo, PhD. en Ciencias de la Tierra en Colorado State University.",
+      "bio_en": "Agronomist, PhD in Earth Sciences from Colorado State University.",
       "email": "freddy.saavedra@upla.cl",
       "foto": "assets/img/team/Freddy_Saavedra.webp"
     },
@@ -13,6 +14,7 @@
       "rol": "Directiva",
       "grupo": "direccion",
       "bio": "Arquitecta, MSc. en Desarrollo Regional y Medio Ambiente, PhD. en Ciencias Ambientales.",
+      "bio_en": "Architect, MSc in Regional Development and Environment, PhD in Environmental Sciences.",
       "email": "ana.hernandez@upla.cl",
       "foto": "assets/img/team/Ana_Hernandez.webp"
     },
@@ -21,6 +23,7 @@
       "rol": "Investigador",
       "grupo": "investigacion",
       "bio": "Geógrafo, MSc. en Áreas Silvestres y Conservación de la Naturaleza en Universidad de Chile.",
+      "bio_en": "Geographer, MSc in Wildlands and Nature Conservation from Universidad de Chile.",
       "email": "marcelo.leguia@upla.cl",
       "foto": "assets/img/team/Marcelo_Leguia.webp"
     },
@@ -29,6 +32,7 @@
       "rol": "Investigador",
       "grupo": "investigacion",
       "bio": "Geógrafo, MSc. en Gestión Ambiental. Profesor asociado FCNE, Universidad de Playa Ancha.",
+      "bio_en": "Geographer, MSc in Environmental Management. Associate professor, Faculty of Natural and Exact Sciences, Universidad de Playa Ancha.",
       "email": "cromero@upla.cl",
       "foto": "assets/img/team/Carlos_Romero.webp"
     },
@@ -37,6 +41,7 @@
       "rol": "Asistente de investigación",
       "grupo": "investigacion",
       "bio": "Geólogo de la Universidad Andrés Bello (Viña del Mar).",
+      "bio_en": "Geologist from Universidad Andrés Bello (Viña del Mar).",
       "email": "javier.medina.men@upla.cl",
       "foto": "assets/img/team/Javier_Medina.webp"
     },
@@ -45,6 +50,7 @@
       "rol": "Periodista",
       "grupo": "comunicaciones",
       "bio": "Periodista de la Pontificia Universidad Católica de Valparaíso, con experiencia en comunicación científica en proyectos I+D.",
+      "bio_en": "Journalist from Pontificia Universidad Católica de Valparaíso, with experience in science communication for R&D projects.",
       "email": "manuel@narbona.cl",
       "foto": "assets/img/team/Manuel_Narbona.webp"
     }

@@ -2,11 +2,13 @@
   {
     "id": "nieves",
     "titulo": "Observatorio Satelital de Nieves",
+    "titulo_en": "Satellite Snow Observatory",
     "proyecto": "FONDEF IDeA ID20i10058 · IT24I0092",
     "categoria": "Nieve y agua",
     "url": "https://observatorionieves.cl/",
     "imagen": "assets/img/plataformas/nieves.webp",
     "descripcion": "Cobertura de nieve diaria para todo Chile continental a partir de MODIS Terra y Aqua, con estadísticas por cuenca y boletines periódicos junto a la DGA.",
+    "descripcion_en": "Daily snow cover for all of mainland Chile from MODIS Terra and Aqua, with statistics by watershed and regular bulletins together with the DGA.",
     "chips": [
       "MODIS",
       "Cobertura nival",
@@ -16,11 +18,13 @@
   {
     "id": "hidromet",
     "titulo": "Observatorio de Altura de Nieve",
+    "titulo_en": "Snow Depth Observatory",
     "proyecto": "FONDEF IT24I0092",
     "categoria": "Nieve y agua",
     "url": "https://javiermedinamen-art.github.io/hidromet",
     "imagen": "assets/img/plataformas/hidromet.webp",
     "descripcion": "Explorador de estaciones y comparación entre cuencas de la altura de nieve mensual y anual en los Andes del Sur, construido sobre registros diarios con control de calidad.",
+    "descripcion_en": "A station explorer and watershed comparison of monthly and annual snow depth in the Southern Andes, built on quality-controlled daily records.",
     "chips": [
       "Estaciones",
       "Altura de nieve",
@@ -30,11 +34,13 @@
   {
     "id": "nieves-hr",
     "titulo": "Persistencia de nieve en alta resolución",
+    "titulo_en": "High-resolution snow persistence",
     "proyecto": "FONDEF IT24I0092 · Hito 1",
     "categoria": "Nieve y agua",
     "url": "https://ee-observatorionieves.projects.earthengine.app/view/visualizador-de-nieve-de-alta-resolucion---hito-1-fondef-it",
     "imagen": "assets/img/plataformas/nieves_hr.webp",
     "descripcion": "Persistencia mensual de nieve en 2024 con Landsat 8/9 y Sentinel-2 para seis cuencas: Elqui, Aconcagua, Maipo, Itata, Toltén y Baker. Comparador entre misiones y gráfico de persistencia mensual.",
+    "descripcion_en": "Monthly snow persistence in 2024 with Landsat 8/9 and Sentinel-2 for six watersheds: Elqui, Aconcagua, Maipo, Itata, Toltén and Baker. Mission comparison slider and monthly persistence chart.",
     "chips": [
       "Landsat 8/9",
       "Sentinel-2",
@@ -44,11 +50,13 @@
   {
     "id": "genius",
     "titulo": "Plataforma GENIUS",
+    "titulo_en": "GENIUS Platform",
     "proyecto": "FONDEF IDeA",
     "categoria": "Ciudades",
     "url": "https://plataformagenius.cl/",
     "imagen": "assets/img/plataformas/genius.webp",
     "descripcion": "Indicadores satelitales urbanos para Quilpué y la Región de Valparaíso: áreas verdes, contaminación del aire, huella urbana, luminosidad y temperatura superficial. Con U. de Chile, Municipalidad de Quilpué, GORE Valparaíso y CSU.",
+    "descripcion_en": "Urban satellite indicators for Quilpué and the Valparaíso Region: green areas, air pollution, urban footprint, night lights and land surface temperature. With U. de Chile, the Municipality of Quilpué, the Valparaíso Regional Government and CSU.",
     "chips": [
       "Áreas verdes",
       "Temperatura superficial",
@@ -58,11 +66,13 @@
   {
     "id": "incendio",
     "titulo": "Incendio Viña del Mar 2024",
+    "titulo_en": "Viña del Mar Wildfire 2024",
     "proyecto": "Google Earth Engine",
     "categoria": "Incendios",
     "url": "https://ee-javiermedinamen.projects.earthengine.app/view/visualizador---incendio-2024",
     "imagen": "assets/img/plataformas/incendio.webp",
     "descripcion": "Áreas quemadas y severidad del gran incendio de febrero de 2024 en Viña del Mar y sus alrededores, con un comparador de imágenes antes y después.",
+    "descripcion_en": "Burned areas and severity of the large February 2024 wildfire in Viña del Mar and its surroundings, with a before-and-after image comparison.",
     "chips": [
       "Severidad",
       "Áreas quemadas",
@@ -72,11 +82,13 @@
   {
     "id": "jbn",
     "titulo": "Vegetación del Jardín Botánico Nacional",
+    "titulo_en": "National Botanic Garden Vegetation",
     "proyecto": "Google Earth Engine",
     "categoria": "Vegetación",
     "url": "https://ee-teleamb.projects.earthengine.app/view/visualizador-de-vegetacin---jbn",
     "imagen": "assets/img/plataformas/jbn.webp",
     "descripcion": "Series de índices de vegetación normalizados para seguir el estado y la evolución de la cobertura vegetal del Jardín Botánico Nacional de Viña del Mar.",
+    "descripcion_en": "Time series of normalised vegetation indices to track the condition and evolution of plant cover in the National Botanic Garden in Viña del Mar.",
     "chips": [
       "Índices normalizados",
       "Series de tiempo"
@@ -85,11 +97,13 @@
   {
     "id": "salar",
     "titulo": "Vuelos de dron en el Salar del Huasco",
+    "titulo_en": "Drone flights over the Salar del Huasco",
     "proyecto": "Anillo MESS · con U. de Antofagasta",
     "categoria": "Drones",
     "url": "https://teleamb-upla.github.io/salares_web/",
     "imagen": "assets/img/plataformas/salar.webp",
     "descripcion": "Ortomosaicos de dron con capas RGB, NDVI, NDCI, NDWI y temperatura superficial (LST) para el monitoreo de humedales altoandinos del Salar del Huasco.",
+    "descripcion_en": "Drone orthomosaics with RGB, NDVI, NDCI, NDWI and land surface temperature (LST) layers to monitor the high-Andean wetlands of the Salar del Huasco.",
     "chips": [
       "Dron",
       "NDVI · NDWI",
@@ -99,11 +113,13 @@
   {
     "id": "aconcagua-vivo",
     "titulo": "Aconcagua Vivo",
+    "titulo_en": "Aconcagua Vivo",
     "proyecto": "FNDR · Gobierno Regional de Valparaíso",
     "categoria": "Biodiversidad",
     "url": "https://teleamb-upla.github.io/FNDR_V2/",
     "imagen": "assets/img/plataformas/aconcagua.webp",
     "descripcion": "Programa participativo para reconocer, valorar y promover la biodiversidad de la cuenca media del Aconcagua. Cualquier persona puede registrarse y sumar observaciones georreferenciadas en el explorador.",
+    "descripcion_en": "A participatory programme to recognise, value and promote biodiversity in the middle Aconcagua basin. Anyone can sign up and add georeferenced observations in the explorer.",
     "chips": [
       "Ciencia ciudadana",
       "Biodiversidad",

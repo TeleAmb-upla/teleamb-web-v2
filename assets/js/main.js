@@ -101,6 +101,7 @@
   }
 
   // ---------- Contadores ----------
+  const locale = window.TA_LANG === "en" ? "en-US" : "es-CL";
   const counterObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
@@ -109,7 +110,7 @@
         counterObserver.unobserve(el);
         const target = parseFloat(el.dataset.count);
         if (reduceMotion) {
-          el.textContent = target.toLocaleString("es-CL");
+          el.textContent = target.toLocaleString(locale);
           return;
         }
         const dur = 1800;
@@ -117,7 +118,7 @@
         const step = (now) => {
           const k = Math.min(1, (now - t0) / dur);
           const eased = 1 - Math.pow(1 - k, 4);
-          el.textContent = Math.round(target * eased).toLocaleString("es-CL");
+          el.textContent = Math.round(target * eased).toLocaleString(locale);
           if (k < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);

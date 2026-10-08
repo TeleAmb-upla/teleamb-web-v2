@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("ta-lang");if(l==="en"){document.documentElement.classList.add("lang-pending");setTimeout(function(){document.documentElement.classList.remove("lang-pending")},2500)}}catch(e){}</script>
   <title>Contacto y servicios · TeleAmb UPLA</title>
   <meta name="description" content="Servicios de teledetección, vuelos con drones, cartografía y capacitación. Contacta al Laboratorio TeleAmb de la Universidad de Playa Ancha.">
   <meta name="theme-color" content="#04090f">
@@ -262,16 +263,19 @@
     </div>
   </footer>
 
+  <script src="assets/js/i18n-en.js" defer></script>
+  <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/seams.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script>
     document.querySelector("[data-contact-form]").addEventListener("submit", function (e) {
       e.preventDefault();
+      const t = window.TA_t || ((s) => s);
       const f = e.target;
       const status = f.querySelector("[data-form-status]");
       if (!f.checkValidity()) {
         status.style.color = "var(--ochre)";
-        status.textContent = "Completa nombre, un correo válido y el mensaje.";
+        status.textContent = t("Completa nombre, un correo válido y el mensaje.");
         f.querySelector(":invalid").focus();
         return;
       }
@@ -288,7 +292,7 @@
       const subject = "Contacto web TeleAmb · " + data.get("nombre");
       window.location.href = "mailto:teleamb@upla.cl?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       status.style.color = "var(--green)";
-      status.textContent = "Abrimos tu cliente de correo con el mensaje listo para enviar.";
+      status.textContent = t("Abrimos tu cliente de correo con el mensaje listo para enviar.");
     });
   </script>
 </body>

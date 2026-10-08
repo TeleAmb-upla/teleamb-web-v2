@@ -406,6 +406,7 @@ h4 {
   font-size: 0.6rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--muted);
 }
 
@@ -423,6 +424,7 @@ h4 {
   padding: 8px 14px;
   border-radius: 999px;
   font-size: 0.92rem;
+  white-space: nowrap;
   color: var(--muted);
   transition: color 0.25s, background 0.25s;
 }
@@ -502,6 +504,10 @@ h4 {
   .nav__links a {
     padding: 8px 10px;
     font-size: 0.86rem;
+  }
+
+  .nav__cta .btn {
+    display: none;
   }
 }
 
@@ -3754,6 +3760,51 @@ h4 {
 
 .hero__proof {
   border-top-color: rgba(168, 220, 220, 0.16);
+}
+
+/* ---------- Idioma ---------- */
+
+.lang-pending body {
+  visibility: hidden;
+}
+
+.lang-switch {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+}
+
+.lang-switch button {
+  min-width: 38px;
+  height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.lang-switch button:hover {
+  color: var(--text);
+}
+
+.lang-switch button[aria-pressed="true"] {
+  background: var(--text);
+  color: var(--bg);
+  cursor: default;
+}
+
+.lang-switch button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
 }
 
 /* ---------- Colaboradores ---------- */
